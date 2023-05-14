@@ -1,17 +1,18 @@
 import "./globals.css";
-import { Inter, Josefin_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "../public/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
   display: "swap",
 });
-const josefin_sans = Josefin_Sans({
-  subsets: ["latin"],
+const josefin_sans = localFont({
+  src: "../public/fonts/JosefinSans-Regular.ttf",
   variable: "--font-josefin-sans",
   display: "swap",
 });
+
 export const metadata = {
   title: "NoteUp",
   description: "A Note taking Web app",
