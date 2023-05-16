@@ -1,4 +1,3 @@
-import { SignUp } from "@clerk/nextjs";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Create an account",
@@ -8,9 +7,7 @@ export default function Page() {
   return (
     <div className=" grid h-screen w-screen flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">
       <div className="hidden h-full bg-slate-100 lg:block" />
-      <div className="mx-auto">
-        <SignUp />
-      </div>
+      <div className="mx-auto">Sign Up</div>
     </div>
   );
 }

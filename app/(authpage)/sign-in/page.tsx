@@ -1,4 +1,3 @@
-import { SignIn } from "@clerk/nextjs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,8 +6,6 @@ export const metadata: Metadata = {
 };
 export default function Page() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <SignIn />
-    </div>
+    <div className="flex h-screen items-center justify-center">Sign In</div>
   );
 }

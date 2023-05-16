@@ -1,6 +1,5 @@
 import "./globals.css";
 import localFont from "next/font/local";
-import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.ttf",
@@ -24,10 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={`${inter.variable} ${josefin_sans.variable}`}>
-        <body>{children}</body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className={`${inter.variable} ${josefin_sans.variable}`}>
+      <body>{children}</body>
+    </html>
   );
 }
