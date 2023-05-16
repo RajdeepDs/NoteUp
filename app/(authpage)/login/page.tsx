@@ -4,7 +4,7 @@ import Image from "next/image";
 import LoginForm from "@/components/loginForm";
 import OauthButton from "@/components/oauthButton";
 export const metadata: Metadata = {
-  title: "Login to your account",
+  title: "Login | NoteUp",
   description: "Login to your account to get started",
 };
 export default function LoginPage() {
