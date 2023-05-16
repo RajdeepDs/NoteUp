@@ -17,8 +17,11 @@ module.exports = {
       colors: {
         primary: "#0D6EFD",
         secondary: "#9AC1F1",
-        bg: "#FFFFFF",
+        background: "#FFFFFF",
         black: "#001834",
+        mutedblack: "#969595",
+        mutedprimary: "#D6E7FF",
+        mutedsecondary: "#FFD6D6",
       },
       fontFamily: {
         sans: ["var(--font-inter)"],
