@@ -1,6 +1,6 @@
 import "./globals.css";
 import localFont from "next/font/local";
-
+import Provider from "@/components/Provider";
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
@@ -24,7 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${josefin_sans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

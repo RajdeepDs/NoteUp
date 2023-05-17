@@ -1,6 +1,12 @@
+"use client";
+import * as React from "react";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { Icons } from "./icons";
+import { signIn } from "next-auth/react";
 export default function OauthButton() {
+  const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
+  const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false);
   return (
     <>
       <div className="relative">
@@ -17,13 +23,33 @@ export default function OauthButton() {
         <button
           type="button"
           className={cn(buttonVariants({ variant: "outline" }))}
+          onClick={() => {
+            setIsGitHubLoading(true);
+            signIn("github");
+          }}
+          disabled={isGoogleLoading || isGitHubLoading}
         >
+          {isGitHubLoading ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.gitHub className="mr-2 h-4 w-4" />
+          )}{" "}
           Github
         </button>
         <button
           type="button"
           className={cn(buttonVariants({ variant: "outline" }))}
+          onClick={() => {
+            setIsGoogleLoading(true);
+            signIn("google");
+          }}
+          disabled={isGoogleLoading || isGitHubLoading}
         >
+          {isGoogleLoading ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.google className="mr-2 h-4 w-4" />
+          )}{" "}
           Google
         </button>
       </div>
