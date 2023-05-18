@@ -50,21 +50,21 @@ export default function RegisterForm({
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid gap-2">
             <div className="grid gap-1">
-              <Label className="sr-only" htmlFor="username">
+              <Label className="sr-only" htmlFor="name">
                 UserName
               </Label>
               <Input
-                id="username"
+                id="name"
                 type="text"
                 placeholder="your name"
                 autoCapitalize="none"
                 autoCorrect="off"
                 className="border"
-                {...register("username", { required: "This is required" })}
+                {...register("name", { required: "This is required" })}
               />
-              {errors?.username && (
+              {errors?.name && (
                 <p className="px-1 text-xs text-red-600">
-                  {errors.username.message}
+                  {errors.name.message}
                 </p>
               )}
               <Label className="sr-only" htmlFor="email">

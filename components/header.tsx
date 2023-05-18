@@ -1,7 +1,7 @@
 type DashboardHeaderProps = {
   title: string;
-  description: string;
-  children: React.ReactNode;
+  description?: string;
+  children?: React.ReactNode;
 };
 
 export default function DashboardHeader({

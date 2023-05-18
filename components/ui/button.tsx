@@ -12,7 +12,7 @@ const buttonVariants = cva(
         outline:
           "bg-transparent text-primary border border-primary hover:bg-mutedprimary/90",
         destructive:
-          "bg-mutedred text-secondary hover:bg-mutedred-600 focus-visible:ring-mutedred-500",
+          "bg-mutedsecondary text-secondary focus-visible:ring-secondary",
       },
       size: {
         default: "h-10 py-2 px-4",
