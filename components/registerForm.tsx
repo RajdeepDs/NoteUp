@@ -1,7 +1,9 @@
 "use client";
+
+import axios from "axios";
 import * as React from "react";
-import { useForm } from "react-hook-form";
-import { useSearchParams } from "next/navigation";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
@@ -10,6 +12,7 @@ import { buttonVariants } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { cn } from "@/lib/utils";
+import { Icons } from "./icons";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -25,15 +28,26 @@ export default function RegisterForm({
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(userAuthSchema) });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+
+    axios
+      .post("/api/register", data)
+      .then(() => {
+        toast.success("Registered!");
+      })
+      .catch((error) => {
+        toast.error(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
   return (
     <div className={cn("grid gap-6", className)} {...props}>
       <div className="flex flex-col space-y-2">
-        <form
-          onSubmit={handleSubmit((data) => {
-            console.log(data);
-          })}
-        >
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid gap-2">
             <div className="grid gap-1">
               <Label className="sr-only" htmlFor="username">
@@ -87,7 +101,14 @@ export default function RegisterForm({
                 </p>
               )}
             </div>
-            <button type="submit" className={cn(buttonVariants())}>
+            <button
+              type="submit"
+              className={cn(buttonVariants())}
+              disabled={isLoading}
+            >
+              {isLoading && (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              )}
               Register to Continue
             </button>
           </div>
