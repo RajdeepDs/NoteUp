@@ -123,7 +123,7 @@ export function Editor({ note }: EditorProps) {
           <div className="flex items-center space-x-10">
             <Link
               href="/dashboard"
-              className={cn(buttonVariants({ variant: "outline" }))}
+              className={cn(buttonVariants({ variant: "ghostblack" }))}
             >
               <>
                 <Icons.chevronLeft className="mr-2 h-4 w-4" />
@@ -147,11 +147,11 @@ export function Editor({ note }: EditorProps) {
             id="title"
             defaultValue={note.title}
             placeholder="Note title"
-            className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none"
+            className="bg-transparent w-full resize-none appearance-none overflow-hidden text-5xl font-bold focus:outline-none"
             {...register("title")}
           />
           <div id="editor" className="min-h-[500px]" />
-          <p className="text-sm text-gray-500">
+          <p className="text-gray-500 text-sm">
             Use{" "}
             <kbd className="bg-muted rounded-md border px-1 text-xs uppercase">
               Tab

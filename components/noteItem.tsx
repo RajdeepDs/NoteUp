@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Note } from "@prisma/client";
 import { formatDate } from "@/lib/utils";
-import {DeleteNoteItem} from "./deleteNoteItem";
+import { DeleteNoteItem } from "./deleteNoteItem";
 
 interface NoteItemProps {
   note: Pick<Note, "id" | "title" | "published" | "createdAt">;
@@ -18,7 +18,7 @@ export function NoteItem({ note }: NoteItemProps) {
           {note.title}
         </Link>
         <div>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-sm text-accent-4">
             {formatDate(note.createdAt?.toDateString())}
           </p>
         </div>

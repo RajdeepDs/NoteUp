@@ -22,7 +22,7 @@ export default async function DashboardLayout({
   }
   return (
     <div>
-      <header className="container flex items-center justify-between border-b py-2">
+      <header className="container flex items-center justify-between border-b border-accent-2 py-2">
         <div className="flex items-center space-x-2">
           <Image src="/logo.svg" alt="logo" width={35} height={35} />
           <h1 className="noteup text-2xl">NoteUp</h1>

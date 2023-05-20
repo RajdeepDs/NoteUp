@@ -49,7 +49,7 @@ export default function RegisterForm({
       <div className="flex flex-col space-y-2">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid gap-2">
-            <div className="grid gap-1">
+            <div className="grid gap-2">
               <Label className="sr-only" htmlFor="name">
                 UserName
               </Label>
@@ -63,7 +63,7 @@ export default function RegisterForm({
                 {...register("name", { required: "This is required" })}
               />
               {errors?.name && (
-                <p className="px-1 text-xs text-red-600">
+                <p className="text-error-light px-1 text-xs">
                   {errors.name.message}
                 </p>
               )}
@@ -81,7 +81,7 @@ export default function RegisterForm({
                 {...register("email", { required: "This is required" })}
               />
               {errors?.email && (
-                <p className="px-1 text-xs text-red-600">
+                <p className="text-error-light px-1 text-xs">
                   {errors.email.message}
                 </p>
               )}
@@ -96,14 +96,14 @@ export default function RegisterForm({
                 {...register("password", { required: "This is required" })}
               />
               {errors?.password && (
-                <p className="px-1 text-xs text-red-600">
+                <p className="text-error-light px-1 text-xs">
                   {errors.password.message}
                 </p>
               )}
             </div>
             <button
               type="submit"
-              className={cn(buttonVariants())}
+              className={cn(buttonVariants({variant: "solidblue"}))}
               disabled={isLoading}
             >
               {isLoading && (

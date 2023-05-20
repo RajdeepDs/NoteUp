@@ -33,7 +33,7 @@ export default async function DashboardPage() {
       </DashboardHeader>
       <main className="mt-4">
         {notes?.length ? (
-          <div className="divide-border divide-y rounded-md border">
+          <div className="divide-border divide-y rounded-md border border-accent-2">
             {notes.map((note) => (
               <NoteItem key={note.id} note={note} />
             ))}
@@ -41,7 +41,7 @@ export default async function DashboardPage() {
         ) : (
           <div className="my-auto flex flex-col items-center justify-center overflow-hidden">
             <h1 className="noteup ">Start creating note</h1>
-            <p className=" text-center text-xl text-mutedblack">
+            <p className=" text-center text-xl text-accent-4">
               You don&apos;t have any notes yet. Start creating note
             </p>
           </div>

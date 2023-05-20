@@ -22,10 +22,10 @@ export default function LoginPage() {
               className="mx-auto"
             />
           </Link>
-          <h1 className="font-mono text-2xl font-semibold text-black">
+          <h1 className="font-mono text-2xl font-semibold text-foreground">
             Welcome Back
           </h1>
-          <p className="text-sm text-mutedblack">
+          <p className="text-sm text-accent-3">
             Enter Email and Password to sign in to your account
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function LoginPage() {
         <OauthButton />
         <Link
           href={"/register"}
-          className="text-center text-sm text-mutedblack underline underline-offset-4 hover:text-black"
+          className="text-center text-sm text-accent-3 underline underline-offset-4 hover:text-foreground"
         >
           Don&apos;t have an account? Sign Up
         </Link>

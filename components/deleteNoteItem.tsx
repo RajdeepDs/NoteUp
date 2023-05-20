@@ -42,7 +42,7 @@ export function DeleteNoteItem({ note }: NoteDeleteItemProps) {
   return (
     <button
       onClick={onClick}
-      className={cn(buttonVariants({ variant: "destructive" }))}
+      className={cn(buttonVariants({ variant: "ghostred" }))}
       disabled={isDeleteLoading}
     >
       {isDeleteLoading && (

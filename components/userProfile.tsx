@@ -10,7 +10,7 @@ interface UserProfileProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export default function UserProfile({ user }: UserProfileProps) {
   return (
-    <div className=" mb-2 rounded-lg border border-mutedblack p-4">
+    <div className="mb-2 rounded-lg border border-accent-2 p-4">
       <div className="flex items-center justify-between ">
         <div className="flex flex-col space-y-2">
           <h1 className="text-2xl font-semibold">{user.name}</h1>
@@ -29,9 +29,7 @@ export default function UserProfile({ user }: UserProfileProps) {
       </div>
       <button
         onClick={() => signOut()}
-        className={cn(
-          buttonVariants({ variant: "destructive", size: "default" })
-        )}
+        className={cn(buttonVariants({ variant: "ghostred", size: "default" }))}
       >
         Sign Out
       </button>
