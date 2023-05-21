@@ -1,5 +1,6 @@
 import {
   ChevronLeft,
+  ChevronDown,
   FileText,
   Settings2,
   User2,
@@ -14,6 +15,7 @@ export type Icon = LucideIcon;
 
 export const Icons = {
   chevronLeft: ChevronLeft,
+  chevronDown: ChevronDown,
   inbox: FileText,
   settings: Settings2,
   profile: User2,
