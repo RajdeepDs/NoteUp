@@ -22,7 +22,7 @@ export default function OauthButton() {
       <div className="flex flex-col space-y-2">
         <button
           type="button"
-          className={cn(buttonVariants({ variant: "github" }))}
+          className={cn(buttonVariants({ variant: "oauth" }))}
           onClick={() => {
             setIsGitHubLoading(true);
             signIn("github");
@@ -38,7 +38,7 @@ export default function OauthButton() {
         </button>
         <button
           type="button"
-          className={cn(buttonVariants({ variant: "google" }))}
+          className={cn(buttonVariants({ variant: "oauth" }))}
           onClick={() => {
             setIsGoogleLoading(true);
             signIn("google");

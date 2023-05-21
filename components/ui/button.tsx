@@ -17,8 +17,8 @@ const buttonVariants = cva(
         ghostblack: "bg-background text-foreground hover:bg-accent-2",
         ghostblue: "bg-background text-success hover:bg-success-lighter",
         ghostred: "bg-background text-error hover:bg-error-lighter",
-        github: "bg-foreground text-background hover:bg-accent-7",
-        google: "bg-violet text-background hover:bg-violet-light",
+        oauth:
+          "bg-background text-foreground border border-accent-3 hover:bg-accent-2",
       },
       size: {
         default: "h-10 py-2 px-4",
