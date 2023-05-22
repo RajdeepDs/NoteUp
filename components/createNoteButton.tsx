@@ -50,7 +50,7 @@ export default function CreateNoteButton({
     <button
       onClick={onClick}
       className={cn(
-        buttonVariants({ variant: "solidblue" }),
+        buttonVariants({ variant: "softblue" }),
         {
           "cursor-not-allowed opacity-60": isLoading,
         },

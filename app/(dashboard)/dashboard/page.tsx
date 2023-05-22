@@ -6,6 +6,7 @@ import { getCurrentUser } from "@/lib/session";
 import DashboardHeader from "@/components/header";
 import CreateNoteButton from "@/components/createNoteButton";
 import { NoteItem } from "@/components/noteItem";
+import CategoryBar from "@/components/categorybar";
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
@@ -28,9 +29,14 @@ export default async function DashboardPage() {
   });
   return (
     <div className="">
-      <DashboardHeader title="Notes" description="Create and manage notes.">
+      <DashboardHeader
+        title="All Notes"
+        description="Create and manage notes."
+      />
+      <div className="flex w-full justify-end">
         <CreateNoteButton />
-      </DashboardHeader>
+      </div>
+      <CategoryBar/>
       <main className="mt-4">
         {notes?.length ? (
           <div className="divide-border divide-y rounded-md border border-accent-2">

@@ -14,6 +14,9 @@ const buttonVariants = cva(
           "bg-success text-background hover:bg-background hover:text-success hover:border hover:border-success",
         solidred:
           "bg-error text-background hover:bg-background hover:text-error hover:border hover:border-error",
+        softblue:
+          "bg-success-lighter text-success font-semibold text-md hover:text-success-dark",
+        softred: "bg-error-lighter text-error hover:border hover:border-error",
         ghostblack: "bg-background text-foreground hover:bg-accent-2",
         ghostblue: "bg-background text-success hover:bg-success-lighter",
         ghostred: "bg-background text-error hover:bg-error-lighter",
