@@ -10,8 +10,8 @@ export default function Avatar({ user }: UserAvatarProps) {
         <Image
           src={user.image}
           alt="avatar"
-          width={35}
-          height={35}
+          width={45}
+          height={45}
           priority={true}
           className="rounded-full"
         />

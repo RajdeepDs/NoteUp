@@ -23,14 +23,20 @@ export default async function DashboardLayout({
     return notFound();
   }
   return (
-    <>
-      <aside className=" flex h-screen w-1/6 flex-col bg-accent-2/50  p-2">
-        <div className="flex items-center justify-center border">
+    <div className="flex">
+      <aside className=" flex h-screen w-1/6 flex-col space-y-8 bg-accent-2/50 p-2">
+        <div className="flex items-center justify-start">
           <Avatar user={{ image: user.image || null }} />
           <h1 className="ml-2 font-mono text-lg">{user.name}</h1>
           <ChevronDown className="ml-2 h-4 w-4" />
         </div>
+        <div className="flex flex-col">
+          <DashboardNav items={dashboardConfig.sidebarNav} />
+        </div>
       </aside>
-    </>
+      <main className="flex w-full flex-1 flex-col overflow-hidden px-12 pt-12">
+        {children}
+      </main>
+    </div>
   );
 }

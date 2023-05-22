@@ -1,12 +1,14 @@
 import {
   ChevronLeft,
   ChevronDown,
-  FileText,
+  BookOpen,
   Settings2,
   User2,
   ArrowRight,
   FilePlus2,
   Loader2,
+  Search,
+  Trash,
   type Icon as LucideIcon,
   LucideProps,
 } from "lucide-react";
@@ -16,12 +18,14 @@ export type Icon = LucideIcon;
 export const Icons = {
   chevronLeft: ChevronLeft,
   chevronDown: ChevronDown,
-  inbox: FileText,
+  inbox: BookOpen,
   settings: Settings2,
   profile: User2,
   arrowRight: ArrowRight,
   newNote: FilePlus2,
   spinner: Loader2,
+  searchNote: Search,
+  trashNote: Trash,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
