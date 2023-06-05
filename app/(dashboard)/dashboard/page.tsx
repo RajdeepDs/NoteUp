@@ -20,7 +20,7 @@ export default async function DashboardPage() {
     select: {
       id: true,
       title: true,
-      published: true,
+      // published: true,
       createdAt: true,
     },
     orderBy: {
@@ -36,7 +36,7 @@ export default async function DashboardPage() {
       <div className="flex w-full justify-end">
         <CreateNoteButton />
       </div>
-      <CategoryBar/>
+      <CategoryBar />
       <main className="mt-4">
         {notes?.length ? (
           <div className="divide-border divide-y rounded-md border border-accent-2">
