@@ -6,7 +6,7 @@ import DashboardHeader from "@/components/header";
 import CreateNoteButton from "@/components/createNoteButton";
 
 import CategoryBar from "@/components/categorybar";
-import { NoteList } from "@/components/noteList";
+import  NoteList  from "@/components/noteList";
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
