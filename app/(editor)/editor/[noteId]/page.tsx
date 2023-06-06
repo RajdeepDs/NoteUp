@@ -31,13 +31,20 @@ export default async function EditorPage({ params }: EditorPageProps) {
     notFound();
   }
   return (
-    <Editor
-      note={{
-        id: note.id,
-        title: note.title,
-        content: note.content,
-        published: note.published,
-      }}
-    />
+    // <Editor
+    //   note={{
+    //     id: note.id,
+    //     title: note.title,
+    //     content: note.content,
+    //     published: note.published,
+    //   }}
+    // />
+    <>
+      <div>
+        <h1>{note.title}</h1>
+        <p>{note?.content}</p>
+        {/* <p>{note?.createdAt}</p> */}
+      </div>
+    </>
   );
 }

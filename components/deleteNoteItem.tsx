@@ -7,36 +7,25 @@ import { useRouter } from "next/navigation";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Icons } from "./icons";
+import { useMutation } from "@apollo/client";
+import { DELETE_NOTE } from "@/graphql/mutations";
+import { GET_NOTES } from "@/graphql/queries";
 
 interface NoteDeleteItemProps {
   note: Pick<Note, "id" | "title">;
 }
-async function deleteNote(noteId: string) {
-  const response = await fetch(`/api/notes/${noteId}`, {
-    method: "DELETE",
-  });
-
-  if (!response?.ok) {
-    toast({
-      title: "Something went wrong.",
-      description: "Your note was not deleted. Please try again.",
-      variant: "destructive",
-    });
-  }
-
-  return true;
-}
 
 export function DeleteNoteItem({ note }: NoteDeleteItemProps) {
-  const router = useRouter();
-  const [isDeleteLoading, setIsDeleteLoading] = React.useState<boolean>(false);
+  const [isDeleteLoading, setIsDeleteLoading] = React.useState(false);
+  const [deleteNote] = useMutation(DELETE_NOTE, {
+    variables: { id: note.id },
+    refetchQueries: [{ query: GET_NOTES }],
+  });
   async function onClick() {
     setIsDeleteLoading(true);
-
-    const deleted = await deleteNote(note.id);
+    const deleted = await deleteNote({ variables: { id: note.id } });
     if (deleted) {
       setIsDeleteLoading(false);
-      router.refresh();
     }
   }
   return (

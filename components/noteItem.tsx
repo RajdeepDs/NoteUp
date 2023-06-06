@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Note } from "@prisma/client";
+
 import { formatDate } from "@/lib/utils";
 import { DeleteNoteItem } from "./deleteNoteItem";
+import { INote } from "@/types";
 
 interface NoteItemProps {
-  note: Pick<Note, "id" | "title" | "published" | "createdAt">;
+  note: INote;
 }
 
 export function NoteItem({ note }: NoteItemProps) {
@@ -19,7 +20,7 @@ export function NoteItem({ note }: NoteItemProps) {
         </Link>
         <div>
           <p className="text-sm text-accent-4">
-            {formatDate(note.createdAt?.toDateString())}
+            {/* {formatDate(note.createdAt?.toISOString())} */}
           </p>
         </div>
       </div>

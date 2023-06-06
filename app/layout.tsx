@@ -1,6 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import Provider from "@/components/Provider";
+import { ApolloProviders } from "@/components/Providers";
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
@@ -25,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${josefin_sans.variable}`}>
       <body>
-        <Provider>{children}</Provider>
+        <ApolloProviders>
+          <Provider>{children}</Provider>
+        </ApolloProviders>
       </body>
     </html>
   );
