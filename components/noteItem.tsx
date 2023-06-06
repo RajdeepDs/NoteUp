@@ -13,7 +13,7 @@ export function NoteItem({ note }: NoteItemProps) {
     <div className="flex items-center justify-between p-4">
       <div className="grid gap-1">
         <Link
-          href={`/editor/${note.id}`}
+          href={`http://localhost:3000/editor/${note.id}`}
           className="font-semibold hover:underline"
         >
           {note.title}

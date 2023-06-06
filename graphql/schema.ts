@@ -1,8 +1,10 @@
 export const typeDefs = `#graphql
+    scalar JSON
+
     type Note{
         id: ID!
         title: String!
-        content: String
+        content: JSON
         createdAt: String
         updatedAt: String
         author: User
@@ -30,8 +32,8 @@ export const typeDefs = `#graphql
     }
 
     type Mutation{
-        createNote(title: String!, content: String, tags: [String]): Note!
-        updateNote(id: ID!, title: String!, content: String, tags: [String]): Note
+        createNote(title: String!, content: JSON, tags: [String]): Note!
+        updateNote(id: ID!, title: String!, content: JSON, tags: [String]): Note
         deleteNote(id: ID!): Note
     }
 `;

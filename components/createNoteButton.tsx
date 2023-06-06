@@ -1,11 +1,13 @@
 "use client";
 import * as React from "react";
 import { useRouter } from "next/navigation";
+import { useMutation } from "@apollo/client";
 
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import { ButtonProps, buttonVariants } from "./ui/button";
 import { toast } from "./ui/use-toast";
+import { CREATE_NOTE } from "@/graphql/mutations";
 
 interface NoteCreateButtonProps extends ButtonProps {}
 
@@ -16,35 +18,29 @@ export default function CreateNoteButton({
 }: NoteCreateButtonProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [createNote] = useMutation(CREATE_NOTE);
   async function onClick() {
-    setIsLoading(true);
+    try {
+      const { data } = await createNote({
+        variables: {
+          title: "Untitled Note",
+        },
+      });
 
-    const response = await fetch("/api/notes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: "Untitled Note",
-      }),
-    });
-
-    setIsLoading(false);
-
-    if (!response?.ok) {
-      return toast({
+      if (data?.createNote?.id) {
+        router.refresh();
+        router.push(`/editor/${data.createNote.id}`);
+      } else {
+        throw new Error("Failed to create note");
+      }
+    } catch (error) {
+      console.error(error);
+      toast({
         title: "Something went wrong.",
         description: "Your note was not created. Please try again.",
         variant: "destructive",
       });
     }
-
-    const note = await response.json();
-
-    // This forces a cache invalidation.
-    router.refresh();
-
-    router.push(`/editor/${note.id}`);
   }
   return (
     <button

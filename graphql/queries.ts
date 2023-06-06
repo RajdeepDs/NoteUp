@@ -23,6 +23,11 @@ export const GET_NOTE = gql`
         id
         name
       }
+      author {
+        id
+        name
+        email
+      }
     }
   }
 `;

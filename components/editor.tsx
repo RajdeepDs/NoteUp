@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import EditorJS from "@editorjs/editorjs";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Note } from "@prisma/client";
+
 import { useForm } from "react-hook-form";
 import TextareaAutosize from "react-textarea-autosize";
 import * as z from "zod";
@@ -14,9 +14,10 @@ import { notePatchSchema } from "@/lib/validations/note";
 import { buttonVariants } from "./ui/button";
 import { toast } from "@/components/ui/use-toast";
 import { Icons } from "./icons";
+import { INote } from "@/types";
 
 interface EditorProps {
-  note: Pick<Note, "id" | "title" | "content" | "published">;
+  note: Pick<INote, "id" | "title" | "content">;
 }
 
 type FormData = z.infer<typeof notePatchSchema>;
@@ -130,9 +131,6 @@ export function Editor({ note }: EditorProps) {
                 Back
               </>
             </Link>
-            <p className="text-muted-foreground text-sm">
-              {note.published ? "Published" : "Draft"}
-            </p>
           </div>
           <button type="submit" className={cn(buttonVariants())}>
             {isSaving && (

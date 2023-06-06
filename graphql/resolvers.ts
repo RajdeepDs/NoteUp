@@ -1,7 +1,9 @@
 import { getCurrentUser } from "@/lib/session";
 import { Context } from "../app/api/graphql/route";
+import GraphQLJSON from "graphql-type-json";
 
 export const resolvers = {
+  JSON: GraphQLJSON,
   Query: {
     notes: async (parent: any, args: any, context: Context) => {
       const user = await getCurrentUser();
