@@ -23,5 +23,9 @@ export default function EditorPage({ params: { id } }: Props) {
   if (error) {
     <p>Oops! Something went wrong...</p>;
   }
-  return <Editor note={note} />;
+  return (
+    <div>
+      <Editor note={note} />
+    </div>
+  );
 }
