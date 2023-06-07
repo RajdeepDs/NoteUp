@@ -143,7 +143,7 @@ export function Editor({ note }: EditorProps) {
           <TextareaAutosize
             autoFocus
             id="title"
-            defaultValue={note.title}
+            defaultValue={note?.title}
             placeholder="Note title"
             className="bg-transparent w-full resize-none appearance-none overflow-hidden text-5xl font-bold focus:outline-none"
             {...register("title")}

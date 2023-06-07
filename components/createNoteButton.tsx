@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { ButtonProps, buttonVariants } from "./ui/button";
 import { toast } from "./ui/use-toast";
 import { CREATE_NOTE } from "@/graphql/mutations";
+import { GET_NOTES } from "@/graphql/queries";
 
 interface NoteCreateButtonProps extends ButtonProps {}
 
@@ -22,11 +23,9 @@ export default function CreateNoteButton({
   async function onClick() {
     try {
       const { data } = await createNote({
-        variables: {
-          title: "Untitled Note",
-        },
+        variables: { title: "Untitled Note" },
+        refetchQueries: [{ query: GET_NOTES }],
       });
-
       if (data?.createNote?.id) {
         router.refresh();
         router.push(`/editor/${data.createNote.id}`);
@@ -36,8 +35,8 @@ export default function CreateNoteButton({
     } catch (error) {
       console.error(error);
       toast({
-        title: "Something went wrong.",
-        description: "Your note was not created. Please try again.",
+        title: "Something went wrong",
+        description: "Your note was not created. Please try again",
         variant: "destructive",
       });
     }
