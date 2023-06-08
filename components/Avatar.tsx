@@ -1,8 +1,10 @@
-import { User } from "@prisma/client";
 import Image from "next/image";
+import { User } from "@prisma/client";
+
 interface UserAvatarProps {
   user: Pick<User, "image">;
 }
+
 export default function Avatar({ user }: UserAvatarProps) {
   return (
     <div>

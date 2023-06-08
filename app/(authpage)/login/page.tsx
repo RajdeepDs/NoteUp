@@ -1,12 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
 import LoginForm from "@/components/loginForm";
 import OauthButton from "@/components/oauthButton";
+
 export const metadata: Metadata = {
   title: "Login | NoteUp",
   description: "Login to your account to get started",
 };
+
 export default function LoginPage() {
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">

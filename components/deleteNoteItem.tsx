@@ -1,13 +1,12 @@
 "use client";
 
-import { Note } from "@prisma/client";
 import * as React from "react";
-import { toast } from "./ui/use-toast";
-import { useRouter } from "next/navigation";
-import { buttonVariants } from "./ui/button";
+import { Note } from "@prisma/client";
+import { useMutation } from "@apollo/client";
+
 import { cn } from "@/lib/utils";
 import { Icons } from "./icons";
-import { useMutation } from "@apollo/client";
+import { buttonVariants } from "./ui/button";
 import { DELETE_NOTE } from "@/graphql/mutations";
 import { GET_NOTES } from "@/graphql/queries";
 
@@ -21,6 +20,7 @@ export function DeleteNoteItem({ note }: NoteDeleteItemProps) {
     variables: { id: note.id },
     refetchQueries: [{ query: GET_NOTES }],
   });
+
   async function onClick() {
     setIsDeleteLoading(true);
     const deleted = await deleteNote({ variables: { id: note.id } });
@@ -28,6 +28,7 @@ export function DeleteNoteItem({ note }: NoteDeleteItemProps) {
       setIsDeleteLoading(false);
     }
   }
+
   return (
     <button
       onClick={onClick}

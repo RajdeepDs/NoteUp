@@ -1,12 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
 import OauthButton from "@/components/oauthButton";
 import RegisterForm from "@/components/registerForm";
+
 export const metadata: Metadata = {
   title: "Create an account | NoteUp",
   description: "Create an account to get started",
 };
+
 export default function RegisterPage() {
   return (
     <div className=" grid h-screen w-screen flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">

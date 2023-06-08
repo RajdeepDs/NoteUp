@@ -1,9 +1,9 @@
 "use client";
+import { useQuery } from "@apollo/client";
 
 import { Editor } from "@/components/editor";
 import { GET_NOTE } from "@/graphql/queries";
 import { INote } from "@/types";
-import { useQuery } from "@apollo/client";
 
 type Props = {
   params: {

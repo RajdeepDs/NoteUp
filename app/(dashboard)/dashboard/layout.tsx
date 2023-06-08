@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import Image from "next/image";
-import Avatar from "@/components/Avatar";
-import { DashboardNav } from "@/components/DashboardNav";
-import { dashboardConfig } from "@/config/dashboard";
-import { getCurrentUser } from "@/lib/session";
 import { notFound } from "next/navigation";
-import { Icons } from "@/components/icons";
 import { ChevronDown } from "lucide-react";
+
+import Avatar from "@/components/Avatar";
+import { getCurrentUser } from "@/lib/session";
+import { dashboardConfig } from "@/config/dashboard";
+import { DashboardNav } from "@/components/DashboardNav";
+
 export const metadata: Metadata = {
   title: "Dashboard",
   description: "Dashboard Page",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 interface DashboardLayoutProps {
   children: React.ReactNode;
 }
+
 export default async function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
@@ -22,9 +23,10 @@ export default async function DashboardLayout({
   if (!user) {
     return notFound();
   }
+
   return (
     <div className="flex">
-      <aside className=" flex h-screen w-1/6 flex-col space-y-8 bg-accent-2/50 p-2">
+      <aside className=" flex h-screen min-w-[12rem] flex-col space-y-8 p-2">
         <div className="flex items-center justify-start">
           <Avatar user={{ image: user.image || null }} />
           <h1 className="ml-2 font-mono text-lg">{user.name}</h1>

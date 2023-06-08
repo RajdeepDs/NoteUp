@@ -2,9 +2,9 @@
 import { useQuery } from "@apollo/client";
 import { useSearchParams } from "next/navigation";
 
-import { GET_NOTES, GET_NOTESBYTAG } from "@/graphql/queries";
 import { INote } from "@/types";
 import { NoteItem } from "./noteItem";
+import { GET_NOTES, GET_NOTESBYTAG } from "@/graphql/queries";
 
 export default function NoteList() {
   const searchParams = useSearchParams();

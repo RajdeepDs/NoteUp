@@ -46,6 +46,7 @@ export const GET_NOTESBYTAG = gql`
     notesByTag(tagId: $id) {
       id
       title
+      createdAt
       updatedAt
     }
   }

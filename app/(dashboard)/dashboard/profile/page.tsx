@@ -1,13 +1,15 @@
-import DashboardHeader from "@/components/header";
-import UserProfile from "@/components/userProfile";
-import { getCurrentUser } from "@/lib/session";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+import { getCurrentUser } from "@/lib/session";
+import DashboardHeader from "@/components/header";
+import UserProfile from "@/components/userProfile";
 
 export const metadata: Metadata = {
   title: "Profile | NoteUp",
   description: "Manage your profile.",
 };
+
 export default async function ProfilePage() {
   const user = await getCurrentUser();
   if (!user) {

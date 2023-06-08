@@ -1,13 +1,15 @@
 "use client";
+import Image from "next/image";
 import { User } from "next-auth";
 import { signOut } from "next-auth/react";
-import Image from "next/image";
-import { buttonVariants } from "./ui/button";
+
 import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 
 interface UserProfileProps extends React.HTMLAttributes<HTMLDivElement> {
   user: Pick<User, "name" | "image" | "email">;
 }
+
 export default function UserProfile({ user }: UserProfileProps) {
   return (
     <div className="mb-2 rounded-lg border border-accent-2 p-4">

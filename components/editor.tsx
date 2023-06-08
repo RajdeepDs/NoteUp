@@ -1,10 +1,13 @@
 "use client";
 import * as React from "react";
+import * as z from "zod";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import TextareaAutosize from "react-textarea-autosize";
-import EditorJS from "@editorjs/editorjs";
-import { OutputData } from "@editorjs/editorjs";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { useForm } from "react-hook-form";
+import EditorJS from "@editorjs/editorjs";
 import { useMutation } from "@apollo/client";
 
 import { cn } from "@/lib/utils";
@@ -14,9 +17,6 @@ import { INote } from "@/types";
 import { formatDate } from "@/lib/utils";
 import { notePatchSchema } from "@/lib/validations/note";
 import { UPDATE_NOTE } from "@/graphql/mutations";
-import * as z from "zod";
-import { useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 type EditorProps = {
   note: INote;

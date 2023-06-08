@@ -1,9 +1,11 @@
 "use client";
 import * as React from "react";
-import { buttonVariants } from "./ui/button";
+import { signIn } from "next-auth/react";
+
 import { cn } from "@/lib/utils";
 import { Icons } from "./icons";
-import { signIn } from "next-auth/react";
+import { buttonVariants } from "./ui/button";
+
 export default function OauthButton() {
   const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
   const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false);

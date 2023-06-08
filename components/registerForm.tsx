@@ -1,18 +1,18 @@
 "use client";
-
-import axios from "axios";
 import * as React from "react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+
+import * as z from "zod";
+import axios from "axios";
 import { toast } from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import { userAuthSchema } from "@/lib/validations/auth";
-import { buttonVariants } from "./ui/button";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 import { cn } from "@/lib/utils";
 import { Icons } from "./icons";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { buttonVariants } from "./ui/button";
+import { userAuthSchema } from "@/lib/validations/auth";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -63,7 +63,7 @@ export default function RegisterForm({
                 {...register("name", { required: "This is required" })}
               />
               {errors?.name && (
-                <p className="text-error-light px-1 text-xs">
+                <p className="px-1 text-xs text-error-light">
                   {errors.name.message}
                 </p>
               )}
@@ -81,7 +81,7 @@ export default function RegisterForm({
                 {...register("email", { required: "This is required" })}
               />
               {errors?.email && (
-                <p className="text-error-light px-1 text-xs">
+                <p className="px-1 text-xs text-error-light">
                   {errors.email.message}
                 </p>
               )}
@@ -96,14 +96,14 @@ export default function RegisterForm({
                 {...register("password", { required: "This is required" })}
               />
               {errors?.password && (
-                <p className="text-error-light px-1 text-xs">
+                <p className="px-1 text-xs text-error-light">
                   {errors.password.message}
                 </p>
               )}
             </div>
             <button
               type="submit"
-              className={cn(buttonVariants({variant: "solidblue"}))}
+              className={cn(buttonVariants({ variant: "solidblue" }))}
               disabled={isLoading}
             >
               {isLoading && (

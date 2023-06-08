@@ -1,13 +1,14 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import { useQuery } from "@apollo/client";
 import { GET_TAGS } from "@/graphql/queries";
 import { ITag } from "@/types";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export default function CategoryBar() {
   const [selectedTag, setSelectedTag] = useState<string>("");
-  const { data, loading, error } = useQuery(GET_TAGS);
+  const { data } = useQuery(GET_TAGS);
   const tags: ITag[] = data?.tags;
 
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function CategoryBar() {
   };
 
   return (
-    <div className="mt-2 space-x-4 border-b border-accent-2">
+    <div className="mt-2 space-x-4">
       <span
         className={`${
           selectedTag === ""

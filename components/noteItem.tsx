@@ -1,8 +1,8 @@
 import Link from "next/link";
 
+import { INote } from "@/types";
 import { formatDate } from "@/lib/utils";
 import { DeleteNoteItem } from "./deleteNoteItem";
-import { INote } from "@/types";
 
 interface NoteItemProps {
   note: INote;
