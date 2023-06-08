@@ -1,49 +1,44 @@
 "use client";
 import * as React from "react";
-import { useRouter } from "next/navigation";
 import { useMutation } from "@apollo/client";
+import { useRouter } from "next/navigation";
 
-import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
+import { Icons } from "@/components/icons";
 import { ButtonProps, buttonVariants } from "./ui/button";
-import { toast } from "./ui/use-toast";
 import { CREATE_NOTE } from "@/graphql/mutations";
-import { GET_NOTES } from "@/graphql/queries";
 
-interface NoteCreateButtonProps extends ButtonProps {}
+interface CreateNoteButtonProps extends ButtonProps {}
 
-export default function CreateNoteButton({
+export const CreateNoteButton = ({
   className,
   variant,
   ...props
-}: NoteCreateButtonProps) {
+}: CreateNoteButtonProps) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [createNote] = useMutation(CREATE_NOTE);
-  async function onClick() {
+
+  const handleCreateNote = async () => {
+    setIsLoading(true);
     try {
       const { data } = await createNote({
-        variables: { title: "Untitled Note" },
-        refetchQueries: [{ query: GET_NOTES }],
+        variables: {
+          title: "Untitled Note",
+        },
       });
-      if (data?.createNote?.id) {
-        router.refresh();
-        router.push(`/editor/${data.createNote.id}`);
-      } else {
-        throw new Error("Failed to create note");
-      }
+      setIsLoading(false);
+      const noteId = data.createNote.id;
+      router.push(`/editor/${noteId}`);
     } catch (error) {
-      console.error(error);
-      toast({
-        title: "Something went wrong",
-        description: "Your note was not created. Please try again",
-        variant: "destructive",
-      });
+      setIsLoading(false);
+      console.error("Error creating note:", error);
     }
-  }
+  };
+
   return (
     <button
-      onClick={onClick}
+      onClick={handleCreateNote}
       className={cn(
         buttonVariants({ variant: "softblue" }),
         {
@@ -62,4 +57,4 @@ export default function CreateNoteButton({
       New Note
     </button>
   );
-}
+};

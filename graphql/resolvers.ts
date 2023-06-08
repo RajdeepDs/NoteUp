@@ -68,7 +68,7 @@ export const resolvers = {
           content: args.content,
           author: { connect: { id: userId } },
           tags: {
-            connectOrCreate: tags.map((tagName: String) => ({
+            connectOrCreate: tags?.map((tagName: String) => ({
               where: { name: tagName },
               create: {
                 name: tagName,
@@ -96,7 +96,7 @@ export const resolvers = {
           content: args.content,
           updatedAt: new Date(),
           tags: {
-            connectOrCreate: tags.map((tagName: String) => ({
+            connectOrCreate: tags?.map((tagName: String) => ({
               where: { name: tagName },
               create: {
                 name: tagName,
