@@ -19,9 +19,7 @@ export function NoteItem({ note }: NoteItemProps) {
           {note.title}
         </Link>
         <div>
-          <p className="text-sm text-accent-4">
-            {/* {formatDate(note.createdAt?.toISOString())} */}
-          </p>
+          <p className="text-sm text-accent-4">{formatDate(note.createdAt)}</p>
         </div>
       </div>
       <DeleteNoteItem note={{ id: note.id, title: note.title }} />

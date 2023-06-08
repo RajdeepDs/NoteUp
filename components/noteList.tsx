@@ -1,6 +1,7 @@
 "use client";
 import { useQuery } from "@apollo/client";
 import { useSearchParams } from "next/navigation";
+
 import { GET_NOTES, GET_NOTESBYTAG } from "@/graphql/queries";
 import { INote } from "@/types";
 import { NoteItem } from "./noteItem";
@@ -23,7 +24,7 @@ export default function NoteList() {
   } else {
     const notes = data?.notesByTag || data?.notes;
     return (
-      <div className="divide-border divide-y rounded-md border border-accent-2">
+      <div className="divide-border divide-y divide-accent-2 rounded-md border border-accent-2">
         {notes?.map((note: INote) => (
           <NoteItem key={note.id} note={note} />
         ))}
