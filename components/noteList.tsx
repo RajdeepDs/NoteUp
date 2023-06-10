@@ -24,7 +24,7 @@ export default function NoteList() {
   } else {
     const notes = data?.notesByTag || data?.notes;
     return (
-      <div className="divide-border divide-y divide-accent-2 rounded-md border border-accent-2">
+      <div className="grid grid-cols-2 gap-4">
         {notes?.map((note: INote) => (
           <NoteItem key={note.id} note={note} />
         ))}

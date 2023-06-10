@@ -7,6 +7,10 @@ export const GET_NOTES = gql`
       title
       createdAt
       updatedAt
+      tags {
+        id
+        name
+      }
     }
   }
 `;
@@ -48,6 +52,10 @@ export const GET_NOTESBYTAG = gql`
       title
       createdAt
       updatedAt
+      tags {
+        id
+        name
+      }
     }
   }
 `;

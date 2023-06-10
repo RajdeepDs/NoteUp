@@ -9,6 +9,7 @@ import {
   Loader2,
   Search,
   Trash,
+  List,
   type Icon as LucideIcon,
   LucideProps,
 } from "lucide-react";
@@ -24,6 +25,7 @@ export const Icons = {
   arrowRight: ArrowRight,
   newNote: FilePlus2,
   spinner: Loader2,
+  list: List,
   searchNote: Search,
   trashNote: Trash,
   gitHub: ({ ...props }: LucideProps) => (

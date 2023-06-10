@@ -40,7 +40,7 @@ export const CreateNoteButton = ({
     <button
       onClick={handleCreateNote}
       className={cn(
-        buttonVariants({ variant: "softblue" }),
+        buttonVariants({}),
         {
           "cursor-not-allowed opacity-60": isLoading,
         },

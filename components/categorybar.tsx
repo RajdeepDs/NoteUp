@@ -28,7 +28,7 @@ export default function CategoryBar() {
       <span
         className={`${
           selectedTag === ""
-            ? "border-b-2 border-success text-success"
+            ? "border-b-2 border-primary text-primary"
             : "text-accent-3"
         } cursor-pointer font-medium`}
         onClick={() => handleTagSelection({ name: "Recents", id: "" })}
@@ -40,7 +40,7 @@ export default function CategoryBar() {
           key={tag.id}
           className={`${
             selectedTag === tag.id.toString()
-              ? "border-b-2 border-success text-success"
+              ? "border-success text-success border-b-2"
               : "text-accent-3"
           } cursor-pointer font-medium`}
           onClick={() => handleTagSelection(tag)}

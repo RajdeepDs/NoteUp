@@ -15,12 +15,12 @@ export const dashboardConfig: DashboardConfig = {
     {
       title: "All Notes",
       href: "/dashboard",
-      // icon: "inbox",
+      icon: "inbox",
     },
     {
       title: "Tasks",
       href: "/dashboard/tasks",
-      // icon: "searchNote",
+      icon: "list",
     },
   ],
   settingSidebarNav: [

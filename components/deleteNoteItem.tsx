@@ -32,7 +32,7 @@ export function DeleteNoteItem({ note }: NoteDeleteItemProps) {
   return (
     <button
       onClick={onClick}
-      className={cn(buttonVariants({ variant: "ghostred" }))}
+      className={cn(buttonVariants({ variant: "destructive" }))}
       disabled={isDeleteLoading}
     >
       {isDeleteLoading && (
