@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${josefin_sans.variable}`}>
-      <body className="container">
+      <body>
         <ApolloProviders>
           <Provider>{children}</Provider>
         </ApolloProviders>

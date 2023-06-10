@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
-import Avatar from "@/components/Avatar";
 import { getCurrentUser } from "@/lib/session";
 import { dashboardConfig } from "@/config/dashboard";
 import { DashboardNav } from "@/components/DashboardNav";
@@ -27,36 +26,33 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="flex flex-col">
-      <header className="flex border-b py-2">
-        <div className="flex items-center space-x-4 rounded-md border p-2">
-          <div className="h-5 w-5 rounded-sm bg-purple-400" />
-          <h1 className="text-lg">Rajdeep Das</h1>
-        </div>
-        <div className="flex">
+    <div className="flex min-h-screen flex-col space-y-6">
+      <header className="sticky top-0 z-40 border-b bg-background">
+        <div className="container flex h-16 items-center py-4">
+          <div className="flex items-center space-x-4 rounded-md border p-2">
+            <div className="h-5 w-5 rounded-sm bg-purple-400" />
+            <h1 className="text-lg">Rajdeep Das</h1>
+          </div>
           <MainNav items={dashboardConfig.mainNav} />
+          <div className="ml-auto flex">
+            <UserNav
+              user={{
+                name: user.name,
+                email: user.email,
+                image: user.image,
+              }}
+            />
+          </div>
         </div>
-        <UserNav
-          user={{
-            name: user.name,
-            email: user.email,
-            image: user.image,
-          }}
-        />
       </header>
-      <aside className=" flex h-screen min-w-[12rem] flex-col space-y-8 p-2">
-        {/* <div className="flex items-center justify-start">
-          <Avatar user={{ image: user.image || null }} />
-          <h1 className="ml-2 font-mono text-lg">{user.name}</h1>
-          <ChevronDown className="ml-2 h-4 w-4" />
-        </div> */}
-        <div className="flex flex-col">
-          {/* <DashboardNav items={dashboardConfig.sidebarNav} /> */}
-        </div>
-      </aside>
-      <main className="flex w-full flex-1 flex-col overflow-hidden px-12 pt-12">
-        {/* {children} */}
-      </main>
+      <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
+        <aside className="hidden w-[200px] flex-col md:flex">
+          <DashboardNav items={dashboardConfig.sidebarNav} />
+        </aside>
+        <main className="flex w-full flex-1 flex-col overflow-hidden">
+          {children}
+        </main>
+      </div>
     </div>
   );
 }
