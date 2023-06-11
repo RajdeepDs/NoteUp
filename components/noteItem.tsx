@@ -10,7 +10,6 @@ interface NoteItemProps {
 }
 
 export function NoteItem({ note }: NoteItemProps) {
-  console.log(note);
   return (
     <div className="grid grid-cols-2 gap-4 rounded-md border">
       <div className="bg-muted"></div>

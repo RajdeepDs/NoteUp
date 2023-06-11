@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -16,34 +16,35 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        border: "hsl(var(--accent-2))",
+        input: "hsl(var(--accent-2))",
+        ring: {
+          blue: "hsl(var(--primary-soft))",
+          red: "hsl(var(--destructive-soft))",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          soft: "hsl(var(--primary-soft))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          soft: "hsl(var(--destructive-soft))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "hsl(var(--accent-2))",
+          foreground: "hsl(var(--muted-accent-3))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          1: "hsl(var(--accent-1))",
+          2: "hsl(var(--accent-2))",
+          3: "hsl(var(--accent-3))",
+          4: "hsl(var(--accent-4))",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
@@ -69,7 +70,11 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-josefin-sans)"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

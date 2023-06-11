@@ -8,7 +8,7 @@ export const dashboardConfig: DashboardConfig = {
     },
     {
       title: "Settings",
-      href: "/dashboard/settings",
+      href: "/settings",
     },
   ],
   sidebarNav: [
@@ -26,15 +26,18 @@ export const dashboardConfig: DashboardConfig = {
   settingSidebarNav: [
     {
       title: "Profile",
-      href: "/dashboard/settings",
+      href: "/settings",
+      icon: "profile",
     },
     {
       title: "Account",
-      href: "/dashboard/settings/account",
+      href: "/settings/account",
+      icon: "account",
     },
     {
       title: "Appearance",
-      href: "/dashboard/settings/appearance",
+      href: "/settings/appearance",
+      icon: "appearance",
     },
   ],
 };

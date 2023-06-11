@@ -3,6 +3,7 @@ import {
   ChevronDown,
   BookOpen,
   Settings2,
+  Settings,
   User2,
   ArrowRight,
   FilePlus2,
@@ -10,6 +11,7 @@ import {
   Search,
   Trash,
   List,
+  UserCog,
   type Icon as LucideIcon,
   LucideProps,
 } from "lucide-react";
@@ -28,6 +30,8 @@ export const Icons = {
   list: List,
   searchNote: Search,
   trashNote: Trash,
+  account: UserCog,
+  appearance: Settings,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

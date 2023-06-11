@@ -62,12 +62,12 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
                 autoCapitalize="none"
                 autoComplete="email"
                 autoCorrect="off"
-                className="border"
+                className="border placeholder:text-accent-3"
                 disabled={isLoading}
                 {...register("email")}
               />
               {errors?.email && (
-                <p className="px-1 text-xs text-error-light">
+                <p className="px-1 text-xs text-destructive">
                   {errors.email.message}
                 </p>
               )}
@@ -78,12 +78,12 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
                 id="password"
                 type="password"
                 placeholder="password"
-                className="border"
+                className="border placeholder:text-accent-3"
                 disabled={isLoading}
                 {...register("password")}
               />
               {errors?.password && (
-                <p className="px-1 text-xs text-error-light">
+                <p className="px-1 text-xs text-destructive">
                   {errors.password.message}
                 </p>
               )}
