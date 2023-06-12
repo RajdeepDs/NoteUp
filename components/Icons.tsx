@@ -12,6 +12,8 @@ import {
   Trash,
   List,
   UserCog,
+  MoreHorizontal,
+  CalendarDays,
   type Icon as LucideIcon,
   LucideProps,
 } from "lucide-react";
@@ -32,6 +34,8 @@ export const Icons = {
   trashNote: Trash,
   account: UserCog,
   appearance: Settings,
+  more: MoreHorizontal,
+  calender: CalendarDays,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

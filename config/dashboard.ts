@@ -1,16 +1,6 @@
 import { DashboardConfig } from "@/types";
 
 export const dashboardConfig: DashboardConfig = {
-  mainNav: [
-    {
-      title: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      title: "Settings",
-      href: "/settings",
-    },
-  ],
   sidebarNav: [
     {
       title: "All Notes",
@@ -22,22 +12,10 @@ export const dashboardConfig: DashboardConfig = {
       href: "/dashboard/tasks",
       icon: "list",
     },
-  ],
-  settingSidebarNav: [
     {
       title: "Profile",
-      href: "/settings",
+      href: "/dashboard/settings",
       icon: "profile",
-    },
-    {
-      title: "Account",
-      href: "/settings/account",
-      icon: "account",
-    },
-    {
-      title: "Appearance",
-      href: "/settings/appearance",
-      icon: "appearance",
     },
   ],
 };
