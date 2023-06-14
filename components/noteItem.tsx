@@ -5,6 +5,7 @@ import { cn, formatDate } from "@/lib/utils";
 import { DeleteNoteItem } from "./deleteNoteItem";
 import { buttonVariants } from "./ui/button";
 import { Icons } from "./icons";
+import MoreOperations from "./more-operations";
 
 interface NoteItemProps {
   note: INote;
@@ -30,8 +31,8 @@ export function NoteItem({ note }: NoteItemProps) {
           </span>
         ))}
       </div>
-      <button className="absolute right-2 top-0  rounded-md border p-2">
-        <Icons.more className="h-4 w-4" />
+      <button className="absolute right-2 top-0 rounded-md border">
+        <MoreOperations note={note} />
       </button>
     </div>
   );

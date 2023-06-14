@@ -11,7 +11,7 @@ import NoteList from "@/components/noteList";
 export default async function DashboardPage() {
   const user = await getCurrentUser();
   if (!user) {
-    redirect(authOptions?.pages?.signIn || "/login");
+    redirect("/login");
   }
 
   return (
