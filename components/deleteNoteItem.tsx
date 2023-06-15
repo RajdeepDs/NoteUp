@@ -30,15 +30,17 @@ export function DeleteNoteItem({ note }: NoteDeleteItemProps) {
   }
 
   return (
-    <button
-      onClick={onClick}
-      className={cn(buttonVariants({ variant: "destructive" }))}
-      disabled={isDeleteLoading}
-    >
-      {isDeleteLoading && (
-        <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-      )}
-      Delete
-    </button>
+    <>
+      <button
+        onClick={onClick}
+        className={cn(buttonVariants({ variant: "destructive" }))}
+        disabled={isDeleteLoading}
+      >
+        {isDeleteLoading && (
+          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+        )}
+        Delete
+      </button>
+    </>
   );
 }

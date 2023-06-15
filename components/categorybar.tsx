@@ -40,7 +40,7 @@ export default function CategoryBar() {
           key={tag.id}
           className={`${
             selectedTag === tag.id.toString()
-              ? "border-success text-success border-b-2"
+              ? "border-b-2 border-primary text-primary"
               : "text-accent-3"
           } cursor-pointer font-medium`}
           onClick={() => handleTagSelection(tag)}

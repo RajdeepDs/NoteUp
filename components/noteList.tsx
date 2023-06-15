@@ -17,9 +17,7 @@ export default function NoteList() {
     }
   );
 
-  if (loading) {
-    return <p>Loading...</p>;
-  } else if (error) {
+  if (error) {
     return <p>Error: {error.message}</p>;
   } else {
     const notes = data?.notesByTag || data?.notes;

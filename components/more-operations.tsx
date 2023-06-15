@@ -1,3 +1,11 @@
+"use client";
+
+import * as React from "react";
+import { useMutation } from "@apollo/client";
+
+import { cn } from "@/lib/utils";
+import { DELETE_NOTE } from "@/graphql/mutations";
+import { GET_NOTES } from "@/graphql/queries";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -6,16 +14,41 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
-
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { INote } from "@/types";
 import { Icons } from "./icons";
-import { DeleteNoteItem } from "./deleteNoteItem";
+
+import { buttonVariants } from "./ui/button";
 
 interface MoreOperationsProps {
   note: Pick<INote, "id" | "title">;
 }
 
 export default function MoreOperations({ note }: MoreOperationsProps) {
+  const [showDeleteAlert, setShowDeleteAlert] = React.useState<boolean>(false);
+  const [isDeleteLoading, setIsDeleteLoading] = React.useState<boolean>(false);
+  // const [isDeleteLoading, setIsDeleteLoading] = React.useState(false);
+  const [deleteNote] = useMutation(DELETE_NOTE, {
+    variables: { id: note.id },
+    refetchQueries: [{ query: GET_NOTES }],
+  });
+
+  async function onClick() {
+    setIsDeleteLoading(true);
+    const deleted = await deleteNote({ variables: { id: note.id } });
+    if (deleted) {
+      setIsDeleteLoading(false);
+    }
+  }
   return (
     <>
       <DropdownMenu>
@@ -29,11 +62,40 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild>
-            <DeleteNoteItem note={note} />
+          <DropdownMenuItem
+            className="flex cursor-pointer items-center text-destructive focus:text-destructive"
+            onSelect={() => setShowDeleteAlert(true)}
+          >
+            Delete
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+      <AlertDialog open={showDeleteAlert} onOpenChange={setShowDeleteAlert}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              Are you sure you want to delete this post?
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={onClick}
+              className="bg-red-600 focus:ring-red-600"
+            >
+              {isDeleteLoading ? (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <Icons.trashNote className="mr-2 h-4 w-4" />
+              )}
+              <span>Delete</span>
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </>
   );
 }
