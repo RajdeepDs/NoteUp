@@ -73,7 +73,7 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              Are you sure you want to delete this post?
+              Are you sure you want to delete this note?
             </AlertDialogTitle>
             <AlertDialogDescription>
               This action cannot be undone.

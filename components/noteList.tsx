@@ -16,8 +16,16 @@ export default function NoteList() {
       variables: { id: tagId },
     }
   );
-
-  if (error) {
+  if (loading) {
+    // Render skeleton when notes are loading
+    return (
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <NoteItem.Skeleton />
+        <NoteItem.Skeleton />
+        <NoteItem.Skeleton />
+      </div>
+    );
+  } else if (error) {
     return <p>Error: {error.message}</p>;
   } else {
     const notes = data?.notesByTag || data?.notes;
