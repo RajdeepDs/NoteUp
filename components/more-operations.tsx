@@ -1,12 +1,13 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { useMutation } from "@apollo/client";
 
-import { cn } from "@/lib/utils";
-import { DELETE_NOTE } from "@/graphql/mutations";
+import { INote } from "@/types";
+import { Icons } from "./icons";
 import { GET_NOTES } from "@/graphql/queries";
-import Link from "next/link";
+import { DELETE_NOTE } from "@/graphql/mutations";
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -24,10 +25,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { INote } from "@/types";
-import { Icons } from "./icons";
-
-import { buttonVariants } from "./ui/button";
 
 interface MoreOperationsProps {
   note: Pick<INote, "id" | "title">;
@@ -36,7 +33,6 @@ interface MoreOperationsProps {
 export default function MoreOperations({ note }: MoreOperationsProps) {
   const [showDeleteAlert, setShowDeleteAlert] = React.useState<boolean>(false);
   const [isDeleteLoading, setIsDeleteLoading] = React.useState<boolean>(false);
-  // const [isDeleteLoading, setIsDeleteLoading] = React.useState(false);
   const [deleteNote] = useMutation(DELETE_NOTE, {
     variables: { id: note.id },
     refetchQueries: [{ query: GET_NOTES }],
@@ -57,7 +53,10 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem asChild>
-            <Link href={`/editor/${note.id}`} className="flex w-full">
+            <Link
+              href={`/editor/${note.id}`}
+              className="flex w-full cursor-pointer"
+            >
               Edit
             </Link>
           </DropdownMenuItem>
