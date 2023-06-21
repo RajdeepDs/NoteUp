@@ -2,7 +2,6 @@ import CategoryBar from "@/components/categorybar";
 import { CreateNoteButton } from "@/components/createNoteButton";
 import DashboardHeader from "@/components/header";
 import { NoteItem } from "@/components/noteItem";
-import NoteList from "@/components/noteList";
 import { DashboardShell } from "@/components/shell";
 
 export default function DashboardLoading() {

@@ -59,7 +59,7 @@ export default function RegisterForm({
                 placeholder="your name"
                 autoCapitalize="none"
                 autoCorrect="off"
-                className="border"
+                className="border placeholder:text-accent-3"
                 {...register("name", { required: "This is required" })}
               />
               {errors?.name && (
@@ -77,7 +77,7 @@ export default function RegisterForm({
                 autoCapitalize="none"
                 autoComplete="email"
                 autoCorrect="off"
-                className="border"
+                className="border placeholder:text-accent-3"
                 {...register("email", { required: "This is required" })}
               />
               {errors?.email && (
@@ -92,7 +92,7 @@ export default function RegisterForm({
                 id="password"
                 type="password"
                 placeholder="password"
-                className="border"
+                className="border placeholder:text-accent-3"
                 {...register("password", { required: "This is required" })}
               />
               {errors?.password && (

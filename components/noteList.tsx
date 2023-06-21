@@ -17,9 +17,9 @@ export default function NoteList() {
     }
   );
   if (loading) {
-    // Render skeleton when notes are loading
     return (
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <NoteItem.Skeleton />
         <NoteItem.Skeleton />
         <NoteItem.Skeleton />
         <NoteItem.Skeleton />
