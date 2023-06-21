@@ -1,11 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ChevronDown } from "lucide-react";
 
 import { getCurrentUser } from "@/lib/session";
 import { dashboardConfig } from "@/config/dashboard";
 import { DashboardNav } from "@/components/DashboardNav";
-import { MainNav } from "@/components/main-nav";
 import UserNav from "@/components/user-nav";
 
 export const metadata: Metadata = {
@@ -27,13 +25,12 @@ export default async function DashboardLayout({
 
   return (
     <div className="flex min-h-screen flex-col space-y-6">
-      <header className="sticky top-0 z-40 border-b bg-background">
+      <header className="sticky top-0 z-40 border-b border-border bg-background">
         <div className="container flex h-16 items-center py-4">
-          <div className="mr-20 hidden items-center space-x-4 rounded-md border p-2 md:flex">
+          <div className="mr-20 hidden items-center space-x-4 rounded-md border border-border p-2 md:flex">
             <div className="h-5 w-5 rounded-sm bg-purple-400" />
             <h1 className="text-lg">Rajdeep Das</h1>
           </div>
-          <MainNav items={dashboardConfig.mainNav} />
           <div className="ml-auto flex">
             <UserNav
               user={{

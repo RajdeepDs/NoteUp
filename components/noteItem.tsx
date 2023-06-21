@@ -27,7 +27,7 @@ export function NoteItem({ note }: NoteItemProps) {
           </span>
         ))}
       </div>
-      <button className="absolute right-2 top-0 rounded-md border">
+      <button className="absolute right-2 top-0 rounded-md">
         <MoreOperations note={note} />
       </button>
     </div>
