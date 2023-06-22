@@ -110,7 +110,7 @@ export function Editor({ note }: EditorProps) {
           <div className="flex items-center space-x-10">
             <Link
               href={"/dashboard"}
-              className={cn(buttonVariants({ variant: "ghostblack" }))}
+              className={cn(buttonVariants({ variant: "ghost" }))}
             >
               <>
                 <Icons.chevronLeft className="mr-2 h-4 w-4" />
@@ -152,7 +152,7 @@ export function Editor({ note }: EditorProps) {
             {/*Here will be the createdAt and updatedAt*/}
           </div>
           <div id="editor" className="min-h-[500px]" />
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm bottom-9">
             Use <kbd>Tab</kbd> to open the command menu.
           </p>
         </div>

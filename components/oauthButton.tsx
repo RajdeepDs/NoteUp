@@ -27,7 +27,7 @@ export default function OauthButton() {
           className={cn(buttonVariants({ variant: "oauth" }))}
           onClick={() => {
             setIsGitHubLoading(true);
-            signIn("github");
+            signIn("github", {callbackUrl: `${window.location.origin}/dashboard`});
           }}
           disabled={isGoogleLoading || isGitHubLoading}
         >
@@ -43,7 +43,7 @@ export default function OauthButton() {
           className={cn(buttonVariants({ variant: "oauth" }))}
           onClick={() => {
             setIsGoogleLoading(true);
-            signIn("google");
+            signIn("google", {callbackUrl: `${window.location.origin}/dashboard`});
           }}
           disabled={isGoogleLoading || isGitHubLoading}
         >

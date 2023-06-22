@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { getCurrentUser } from "@/lib/session";
 import { dashboardConfig } from "@/config/dashboard";
@@ -20,7 +20,7 @@ export default async function DashboardLayout({
 }: DashboardLayoutProps) {
   const user = await getCurrentUser();
   if (!user) {
-    return notFound();
+    redirect("/login");
   }
 
   return (
