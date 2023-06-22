@@ -7,7 +7,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -41,23 +40,23 @@ export default function UserNav({ user }: UserNavProp) {
 
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link href={"/dashboard"} className="cursor-pointer">
+            <Link href={"/dashboard"} className="cursor-pointer hover:bg-muted">
               All Notes
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={"/dashboard/tasks"} className="cursor-pointer">
+            <Link href={"/dashboard/tasks"} className="cursor-pointer hover:bg-muted">
               Tasks
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={"/dashboard/settings"} className="cursor-pointer">
+            <Link href={"/dashboard/settings"} className="cursor-pointer hover:bg-muted">
               Setting
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            className="cursor-pointer text-destructive focus:text-destructive"
+            className="cursor-pointer text-destructive focus:text-destructive hover:bg-destructive-soft"
             onSelect={(event) => {
               event.preventDefault();
               signOut({

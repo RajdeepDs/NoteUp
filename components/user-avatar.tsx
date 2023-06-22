@@ -9,7 +9,7 @@ interface UserAvatarProp extends React.HTMLAttributes<HTMLDivElement> {
 export default function UserAvatar({ user }: UserAvatarProp) {
   return (
     <>
-    <Avatar className="h-8 w-8">
+    <Avatar className="h-8 w-8 ring-2 ring-offset-2 ring-ring-blue">
       {user?.image ? (
           <AvatarImage src={user.image} alt="RD" />
           ) : (

@@ -19,7 +19,7 @@ const formSchema = z.object({
   username: z.string().min(2).max(50),
   email: z.string().min(2).max(50),
 });
-export default function SettingsPage() {
+export default async function SettingsPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,7 +52,7 @@ export default function SettingsPage() {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="shadcn"
+                      placeholder="example"
                       {...field}
                       className="ml-2 max-w-[320px] text-accent-3"
                     />

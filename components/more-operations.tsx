@@ -48,21 +48,21 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger className="flex h-8 w-8 items-center justify-center rounded-md border ">
+        <DropdownMenuTrigger className="flex h-8 w-8  items-center justify-center rounded-md border">
           <Icons.more className="h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem asChild>
             <Link
               href={`/editor/${note.id}`}
-              className="flex w-full cursor-pointer"
+              className="flex w-full cursor-pointer hover:bg-muted"
             >
               Edit
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            className="flex cursor-pointer items-center text-destructive focus:text-destructive"
+            className="flex cursor-pointer items-center text-destructive focus:text-destructive hover:bg-destructive-soft"
             onSelect={() => setShowDeleteAlert(true)}
           >
             Delete

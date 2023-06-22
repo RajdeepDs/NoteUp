@@ -19,7 +19,7 @@ module.exports = {
         border: "hsl(var(--accent-2))",
         input: "hsl(var(--accent-2))",
         ring: {
-          blue: "hsl(var(--primary-soft))",
+          blue: "hsl(var(--primary))",
           red: "hsl(var(--destructive-soft))",
         },
         background: "hsl(var(--background))",
