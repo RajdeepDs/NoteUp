@@ -33,7 +33,7 @@ export default async function SettingsPage() {
   }
   return (
     <div>
-      <div className="border-b ">
+      <div className="border-b mt-2">
         <DashboardHeader
           title="Profile"
           description="Manage your profile settings"

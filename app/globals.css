@@ -1,7 +1,7 @@
 @tailwind base;
-  /* .noteup {
-    @apply font-mono text-5xl-font-semibold text-foreground;
-  } */
+  .noteup {
+    @apply font-mono text-5xl font-semibold text-foreground;
+  }
 @tailwind components;
 @tailwind utilities;
  
