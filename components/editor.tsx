@@ -17,6 +17,7 @@ import { INote } from "@/types";
 // import { formatDate } from "@/lib/utils";
 import { notePatchSchema } from "@/lib/validations/note";
 import { UPDATE_NOTE } from "@/graphql/mutations";
+import { AddTag } from "./add-tag";
 
 type EditorProps = {
   note: INote;
@@ -25,6 +26,10 @@ type EditorProps = {
 type FormData = z.infer<typeof notePatchSchema>;
 
 export function Editor({ note }: EditorProps) {
+  const [tags, setTags] = React.useState<any>([]);
+  const addtags = (tag: any) => {
+    setTags([...tags, tag]);
+  };
   const { register, handleSubmit } = useForm<FormData>({
     resolver: zodResolver(notePatchSchema),
   });
@@ -131,11 +136,14 @@ export function Editor({ note }: EditorProps) {
             id="title"
             defaultValue={note?.title}
             placeholder="Note title"
-            className="w-full resize-none appearance-none overflow-hidden bg-background text-5xl font-bold focus:outline-none"
+            className="bg-background w-full resize-none appearance-none overflow-hidden text-5xl font-bold focus:outline-none"
             {...register("title", { required: true })}
           />
           <div className="mt-2 flex flex-col rounded-md bg-accent-1 p-2">
             <ul className="flex space-x-3">
+              {tags.map((tag, index) => (
+                <li key={index}>{tag.tagname}</li>
+              ))}
               {note?.tags?.map((tag) => (
                 <li
                   key={tag.id}
@@ -145,14 +153,11 @@ export function Editor({ note }: EditorProps) {
                   <button className="ml-1 p-1 hover:bg-accent-3/50">x</button>
                 </li>
               ))}
-              <button className="rounded-sm bg-accent-2 p-1 text-xs text-accent-5">
-                + Add Tag
-              </button>
+              <AddTag addtags={addtags} />
             </ul>
-            {/*Here will be the createdAt and updatedAt*/}
           </div>
           <div id="editor" className="min-h-[500px]" />
-          <p className="text-gray-500 text-sm bottom-9">
+          <p className="bottom-9 text-sm text-gray-500">
             Use <kbd>Tab</kbd> to open the command menu.
           </p>
         </div>
