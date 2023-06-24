@@ -25,10 +25,10 @@ export default function RegisterPage() {
               className="mx-auto"
             />
           </Link>
-          <h1 className="font-mono text-2xl font-semibold text-foreground">
+          <h1 className="font-mono text-2xl font-semibold text-black">
             Create an Account
           </h1>
-          <p className="text-sm text-accent-3">
+          <p className="text-sm text-accent-2">
             Enter below to create your account
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function RegisterPage() {
         <OauthButton />
         <Link
           href={"/login"}
-          className="text-center text-sm text-accent-3 underline underline-offset-4 hover:text-foreground"
+          className="text-center text-sm text-accent-2 underline underline-offset-4 hover:text-black"
         >
           Already have an account? Sign In
         </Link>

@@ -55,14 +55,14 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
           <DropdownMenuItem asChild>
             <Link
               href={`/editor/${note.id}`}
-              className="flex w-full cursor-pointer hover:bg-muted"
+              className="flex w-full cursor-pointer"
             >
               Edit
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            className="flex cursor-pointer items-center text-destructive focus:text-destructive hover:bg-destructive-soft"
+            className="flex cursor-pointer items-center text-secondary focus:text-secondary focus:bg-secondary-soft"
             onSelect={() => setShowDeleteAlert(true)}
           >
             Delete
@@ -83,7 +83,7 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={onClick}
-              className="bg-red-600 focus:ring-red-600"
+              className="bg-secondary focus:ring-secondary"
             >
               {isDeleteLoading ? (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />

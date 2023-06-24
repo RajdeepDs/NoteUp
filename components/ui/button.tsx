@@ -9,19 +9,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-background hover:bg-primary/90",
+        default: "bg-primary text-white hover:bg-primary/90",
         solidblue:
-          "bg-primary text-background hover:bg-background hover:text-primary hover:border hover:border-primary",
+          "bg-primary text-white hover:bg-white hover:text-primary hover:border hover:border-primary",
         destructive:
-          "bg-destructive-soft text-destructive hover:bg-destructive/90 hover:text-background",
+          "bg-destructive-soft text-destructive hover:bg-destructive/90 hover:text-white",
         outline:
-          "border border-input hover:bg-accent hover:text-accent-foreground",
+          "border border-input hover:bg-accent hover:text-accent-2",
         secondary:
-          "bg-primary-soft text-primary hover:bg-primary/80 hover:text-background",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "bg-primary-soft text-primary hover:bg-primary/80 hover:text-white",
+        ghost: "hover:bg-accent hover:text-accent-2",
         link: "underline-offset-4 hover:underline text-primary",
         oauth:
-          "bg-background text-foreground border border-accent-3 hover:bg-accent-2",
+          "bg-white text-black border border-accent-3 hover:bg-accent-1",
       },
       size: {
         default: "h-10 py-2 px-4",

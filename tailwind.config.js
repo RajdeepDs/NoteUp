@@ -2,10 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-  ],
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
   theme: {
     container: {
       center: true,
@@ -16,45 +17,19 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--accent-2))",
-        input: "hsl(var(--accent-2))",
-        ring: {
-          blue: "hsl(var(--primary))",
-          red: "hsl(var(--destructive-soft))",
-        },
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          soft: "hsl(var(--primary-soft))",
+          DEFAULT: "#0070F3",
+          soft: "#D3E5FF",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          soft: "hsl(var(--destructive-soft))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--accent-2))",
-          foreground: "hsl(var(--muted-accent-3))",
+        secondary:{
+          DEFAULT: "#EE0000",
+          soft: "#F7D4D6",
         },
         accent: {
-          1: "hsl(var(--accent-1))",
-          2: "hsl(var(--accent-2))",
-          3: "hsl(var(--accent-3))",
-          4: "hsl(var(--accent-4))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--background))",
-          foreground: "hsl(var(--foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+          1: "#EAEAEA",
+          2: "#999999",
+          3: "#888888",
+        }
       },
       keyframes: {
         "accordion-down": {
@@ -77,4 +52,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}

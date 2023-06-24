@@ -31,7 +31,7 @@ export default function UserNav({ user }: UserNavProp) {
             <div className="flex flex-col space-y-1 leading-none">
               {user.name && <p className="font-medium">{user.name}</p>}
               {user.email && (
-                <p className="w-[200px] truncate text-sm text-muted-foreground">
+                <p className="w-[200px] truncate text-sm text-accent-3">
                   {user.email}
                 </p>
               )}
@@ -40,23 +40,23 @@ export default function UserNav({ user }: UserNavProp) {
 
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link href={"/dashboard"} className="cursor-pointer hover:bg-muted">
+            <Link href={"/dashboard"} className="cursor-pointer">
               All Notes
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={"/dashboard/tasks"} className="cursor-pointer hover:bg-muted">
+            <Link href={"/dashboard/tasks"} className="cursor-pointer">
               Tasks
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={"/dashboard/settings"} className="cursor-pointer hover:bg-muted">
+            <Link href={"/dashboard/settings"} className="cursor-pointer">
               Setting
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            className="cursor-pointer text-destructive focus:text-destructive hover:bg-destructive-soft"
+            className="cursor-pointer text-secondary focus:text-secondary focus:bg-secondary-soft"
             onSelect={(event) => {
               event.preventDefault();
               signOut({
