@@ -46,7 +46,7 @@ export function Editor({ note }: EditorProps) {
     const Code = (await import("@editorjs/code")).default;
     const LinkTool = (await import("@editorjs/link")).default;
     const InlineCode = (await import("@editorjs/inline-code")).default;
-    console.log(note);
+    // console.log(note);
     const body = note ? notePatchSchema.parse(note) : null;
     console.log(body);
     if (!ref.current) {
@@ -95,7 +95,7 @@ export function Editor({ note }: EditorProps) {
           id: note.id,
           title: data.title,
           content: blocks,
-          tags: note.tags?.map((tag) => tag.name),
+          tags: data.tname,
         },
       });
       setIsSaving(false);
@@ -141,8 +141,8 @@ export function Editor({ note }: EditorProps) {
           />
           <div className="mt-2 flex flex-col rounded-md bg-accent-1 p-2">
             <ul className="flex space-x-3">
-              {tags.map((tag, index) => (
-                <li key={index}>{tag.tagname}</li>
+              {tags.map((tag: any) => (
+                <li key={tag.id}>{tag.tagname}</li>
               ))}
               {note?.tags?.map((tag) => (
                 <li

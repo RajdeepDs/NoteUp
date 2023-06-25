@@ -5,4 +5,5 @@ export const notePatchSchema = z.object({
 
   // TODO: Type this properly from editorjs block types?
   content: z.any().optional(),
+  tname: z.string().min(2).optional(),
 });
