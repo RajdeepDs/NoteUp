@@ -20,6 +20,7 @@ const formSchema = z.object({
   email: z.string().min(2).max(50),
 });
 export default async function SettingsPage() {
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
