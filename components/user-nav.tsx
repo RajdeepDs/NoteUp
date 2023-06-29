@@ -51,7 +51,7 @@ export default function UserNav({ user }: UserNavProp) {
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link href={"/dashboard/settings"} className="cursor-pointer">
-              Setting
+              Profile
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
