@@ -4,13 +4,19 @@ import Image from "next/image";
 
 import LoginForm from "@/components/loginForm";
 import OauthButton from "@/components/oauthButton";
+import { getCurrentUser } from "@/lib/session";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Login | NoteUp",
   description: "Login to your account to get started",
 };
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const user = await getCurrentUser();
+  if(user) {
+    redirect("/dashboard");
+  }
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">

@@ -6,7 +6,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import { db } from "@/lib/db";
-import { redirect } from "next/navigation";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db as any),
@@ -47,10 +46,9 @@ export const authOptions: NextAuthOptions = {
 
         if (!isCorrectPassword) {
           throw new Error("Invalid credentials");
-        }else{
-          redirect("/dashboard");
+        } else {
+          return user;
         }
-        return user;
       },
     }),
   ],

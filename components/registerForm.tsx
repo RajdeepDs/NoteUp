@@ -13,6 +13,7 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { buttonVariants } from "./ui/button";
 import { userAuthSchema } from "@/lib/validations/auth";
+import { useRouter } from "next/navigation";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -28,7 +29,8 @@ export default function RegisterForm({
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(userAuthSchema) });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-
+  const router = useRouter();
+  
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
@@ -42,6 +44,7 @@ export default function RegisterForm({
       })
       .finally(() => {
         setIsLoading(false);
+        router.push("/login");
       });
   };
   return (
