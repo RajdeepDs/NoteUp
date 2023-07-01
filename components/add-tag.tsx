@@ -59,7 +59,7 @@ export function AddTag({ noteId }: any) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="text-sm">+ Add Tag</button>
+        <button className="text-sm border px-2 rounded-md">+ Add Tag</button>
       </DialogTrigger>
       <Form {...form}>
         <DialogContent className="sm:max-w-[425px]">
@@ -81,7 +81,7 @@ export function AddTag({ noteId }: any) {
                       <Input
                         placeholder="Add Tag"
                         {...field}
-                        className="col-span-3 items-center"
+                        className="col-span-3 items-center py-2"
                       />
                     </FormControl>
                     <FormMessage />

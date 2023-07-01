@@ -30,7 +30,7 @@ export default function Tags() {
     <div className="flex space-x-4">
       <ul className="flex space-x-2">
         {tags?.map((tag: ITag) => (
-          <li key={tag.id} className="rounded bg-accent-2 px-2 text-white">
+          <li key={tag.id} className="rounded bg-accent-1 px-2 text-accent-3 items-center">
             {tag.name}
             <DeleteTag tagId={tag.id} noteId={noteId} />
           </li>

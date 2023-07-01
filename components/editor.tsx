@@ -140,7 +140,7 @@ export function Editor({ note }: EditorProps) {
             className="bg-background w-full resize-none appearance-none overflow-hidden text-5xl font-bold focus:outline-none"
             {...register("title", { required: true })}
           />
-          <div className="mt-2 flex flex-col rounded-md bg-accent-1 p-2">
+          <div className="mt-2 flex flex-col p-2 border-b">
             <Tags/>
           </div>
           <div id="editor" className="min-h-[500px]" />

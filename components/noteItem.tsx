@@ -1,8 +1,9 @@
 import { INote } from "@/types";
-import { formatDate } from "@/lib/utils";
 import { Icons } from "./icons";
+import { formatDate } from "@/lib/utils";
 import MoreOperations from "./more-operations";
 import { Skeleton } from "@/components/ui/skeleton";
+
 interface NoteItemProps {
   note: INote;
 }
@@ -17,7 +18,7 @@ export function NoteItem({ note }: NoteItemProps) {
         <Icons.calender className="mr-2 h-4 w-4 text-accent-3" />
         <span className="text-accent-3">{formatDate(note.createdAt)}</span>
       </div>
-      <div className="flex">
+      <div className="flex space-x-2">
         {note?.tags?.map((tag) => (
           <span
             key={tag.id}
