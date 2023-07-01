@@ -1,8 +1,10 @@
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+
+import { cn } from "@/lib/utils";
 import EditorPage from "../public/EditorPage.png";
+import { buttonVariants } from "@/components/ui/button";
+
 export default async function Home() {
   return (
     <div className="container flex flex-col">
@@ -92,7 +94,7 @@ export default async function Home() {
         </div>
       </div>
       <footer className="mt-10">
-        <div className="flex flex-col justify-between md:flex-row space-y-2">
+        <div className="flex flex-col justify-between md:flex-row">
           <p className="text-center text-sm md:text-base">
             Build by Rajdeep. The Source code is available on Github.
           </p>
