@@ -45,3 +45,16 @@ export const UPDATE_NOTE = gql`
     }
   }
 `;
+
+export const CREATE_TAG = gql`
+  mutation CreateTag($name: String!, $id: ID!) {
+    createTag(name: $name, id: $id) {
+      id
+      name
+      author {
+        name
+        email
+      }
+    }
+  }
+`;

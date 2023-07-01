@@ -56,6 +56,20 @@ export const resolvers = {
         },
       });
     },
+    tagsByNoteId: async (parent: any, args: any, context: Context) => {
+      return await context.db.tag.findMany({
+        where: {
+          notes: {
+            some: {
+              id: args.noteId,
+            },
+          },
+        },
+        include: {
+          notes: true,
+        },
+      });
+    },
   },
   Mutation: {
     createNote: async (parent: any, args: any, context: Context) => {
@@ -114,6 +128,19 @@ export const resolvers = {
       return await context.db.note.delete({
         where: {
           id: args.id,
+        },
+      });
+    },
+    createTag: async (parent: any, args: any, context: Context) => {
+      const user = await getCurrentUser();
+      const userId = user?.id;
+      return await context.db.tag.create({
+        data: {
+          name: args.name,
+          author: { connect: { id: "6492961dd0e7c197dc867599" } },
+          notes: {
+            connect: { id: args.id },
+          },
         },
       });
     },

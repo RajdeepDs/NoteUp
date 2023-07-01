@@ -29,11 +29,13 @@ export const typeDefs = `#graphql
         note(id: ID!): Note
         tags: [Tag]
         notesByTag(tagId: ID!): [Note]
+        tagsByNoteId(noteId: ID!): [Tag]
     }
 
     type Mutation{
         createNote(title: String!, content: JSON, tags: [String]): Note!
         updateNote(id: ID!, title: String!, content: JSON, tags: [String]): Note
         deleteNote(id: ID!): Note
+        createTag(name: String!, id: ID!): Tag!
     }
 `;

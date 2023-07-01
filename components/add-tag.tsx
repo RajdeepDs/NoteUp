@@ -1,19 +1,5 @@
 "use client";
-import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+
 import {
   Form,
   FormControl,
@@ -23,23 +9,52 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+import * as z from "zod";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+import { useMutation } from "@apollo/client";
+import { CREATE_TAG } from "@/graphql/mutations";
+
 const formSchema = z.object({
   tagname: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
 });
-export function AddTag({addtags}: any) {
+
+export function AddTag({ noteId }: any) {
+  const [createTag] = useMutation(CREATE_TAG);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       tagname: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    addtags(values)
-    console.log(values);
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const { data } = await createTag({
+        variables: {
+          name: values.tagname,
+          id: noteId,
+        },
+      });
+      console.log(data);
+    } catch (error) {
+      console.error("Error creating tag:", error);
+    }
   }
   return (
     <Dialog>

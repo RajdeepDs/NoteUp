@@ -59,3 +59,12 @@ export const GET_NOTESBYTAG = gql`
     }
   }
 `;
+
+export const GET_TAGSBYNOTEID = gql`
+  query TagsByNoteId($noteId: ID!) {
+    tagsByNoteId(noteId: $noteId) {
+      id
+      name
+    }
+  }
+`;

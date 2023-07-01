@@ -47,9 +47,9 @@ export function Editor({ note }: EditorProps) {
     const Code = (await import("@editorjs/code")).default;
     const LinkTool = (await import("@editorjs/link")).default;
     const InlineCode = (await import("@editorjs/inline-code")).default;
-    // console.log(note);
+
     const body = note ? notePatchSchema.parse(note) : null;
-    console.log(body);
+    
     if (!ref.current) {
       const editor = new EditorJS({
         holder: "editor",
