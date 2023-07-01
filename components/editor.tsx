@@ -18,6 +18,7 @@ import { INote } from "@/types";
 import { notePatchSchema } from "@/lib/validations/note";
 import { UPDATE_NOTE } from "@/graphql/mutations";
 import { AddTag } from "./add-tag";
+import Tags from "./tags";
 
 type EditorProps = {
   note: INote;
@@ -140,21 +141,7 @@ export function Editor({ note }: EditorProps) {
             {...register("title", { required: true })}
           />
           <div className="mt-2 flex flex-col rounded-md bg-accent-1 p-2">
-            <ul className="flex space-x-3">
-              {tags.map((tag: any) => (
-                <li key={tag.id}>{tag.tagname}</li>
-              ))}
-              {note?.tags?.map((tag) => (
-                <li
-                  key={tag.id}
-                  className="rounded-sm bg-accent-1 p-1 text-xs text-accent-5 "
-                >
-                  {tag.name}
-                  <button className="ml-1 p-1 hover:bg-accent-2/50">x</button>
-                </li>
-              ))}
-              <AddTag addtags={addtags} />
-            </ul>
+            <Tags/>
           </div>
           <div id="editor" className="min-h-[500px]" />
           <p className="bottom-9 text-sm text-gray-500">
