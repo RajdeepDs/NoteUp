@@ -137,10 +137,17 @@ export const resolvers = {
       return await context.db.tag.create({
         data: {
           name: args.name,
-          author: { connect: { id: "6492961dd0e7c197dc867599" } },
+          author: { connect: { id: userId } },
           notes: {
             connect: { id: args.id },
           },
+        },
+      });
+    },
+    deleteTag: async (parent: any, args: any, context: Context) => {
+      return await context.db.tag.delete({
+        where: {
+          id: args.id,
         },
       });
     },

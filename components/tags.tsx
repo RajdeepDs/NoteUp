@@ -1,11 +1,12 @@
 "use client";
 
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useParams } from "next/navigation";
 
 import { ITag } from "@/types";
 import { AddTag } from "./add-tag";
 import { GET_TAGSBYNOTEID } from "@/graphql/queries";
+import { DELETE_TAG } from "@/graphql/mutations";
 
 export default function Tags() {
   const param = useParams();
@@ -29,10 +30,33 @@ export default function Tags() {
     <div className="flex space-x-4">
       <ul className="flex space-x-2">
         {tags?.map((tag: ITag) => (
-          <li key={tag.id} className="bg-accent-2 text-white rounded px-2">{tag.name}</li>
+          <li key={tag.id} className="rounded bg-accent-2 px-2 text-white">
+            {tag.name}
+            <DeleteTag tagId={tag.id} noteId={noteId} />
+          </li>
         ))}
       </ul>
       <AddTag noteId={noteId} />
     </div>
+  );
+}
+
+export function DeleteTag({ tagId, noteId }: any) {
+  const [deleteTag] = useMutation(DELETE_TAG);
+  const handleDelete = async () => {
+    await deleteTag({
+      variables: { id: tagId },
+      refetchQueries: [
+        { query: GET_TAGSBYNOTEID, variables: { noteId: noteId } },
+      ],
+    });
+  };
+  return (
+    <span
+      className="ml-1 cursor-pointer hover:text-black"
+      onClick={handleDelete}
+    >
+      x
+    </span>
   );
 }

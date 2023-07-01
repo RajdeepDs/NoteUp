@@ -37,5 +37,6 @@ export const typeDefs = `#graphql
         updateNote(id: ID!, title: String!, content: JSON, tags: [String]): Note
         deleteNote(id: ID!): Note
         createTag(name: String!, id: ID!): Tag!
+        deleteTag(id: ID!): Tag
     }
 `;
