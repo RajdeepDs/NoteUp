@@ -17,7 +17,6 @@ import { INote } from "@/types";
 // import { formatDate } from "@/lib/utils";
 import { notePatchSchema } from "@/lib/validations/note";
 import { UPDATE_NOTE } from "@/graphql/mutations";
-import { AddTag } from "./add-tag";
 import Tags from "./tags";
 
 type EditorProps = {
@@ -27,10 +26,6 @@ type EditorProps = {
 type FormData = z.infer<typeof notePatchSchema>;
 
 export function Editor({ note }: EditorProps) {
-  const [tags, setTags] = React.useState<any>([]);
-  const addtags = (tag: any) => {
-    setTags([...tags, tag]);
-  };
   const { register, handleSubmit } = useForm<FormData>({
     resolver: zodResolver(notePatchSchema),
   });
@@ -96,7 +91,6 @@ export function Editor({ note }: EditorProps) {
           id: note.id,
           title: data.title,
           content: blocks,
-          tags: data.tname,
         },
       });
       setIsSaving(false);
@@ -145,7 +139,7 @@ export function Editor({ note }: EditorProps) {
           </div>
           <div id="editor" className="min-h-[500px]" />
           <p className="bottom-9 text-sm text-gray-500">
-            Use <kbd>Tab</kbd> to open the command menu.
+            Use <kbd className="bg-slate-200 p-1 rounded">Tab</kbd> to open the command menu.
           </p>
         </div>
       </div>
