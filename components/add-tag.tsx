@@ -67,7 +67,7 @@ export function AddTag({ noteId }: any) {
             <DialogHeader>
               <DialogTitle>Add Tag</DialogTitle>
               <DialogDescription>
-                Add tags to filter your notes. Click save when you're done.
+                Add tags to filter your notes. Click save when you&apos;re done.
               </DialogDescription>
             </DialogHeader>
             <div className="py-4">

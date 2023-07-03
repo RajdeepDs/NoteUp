@@ -35,7 +35,7 @@ export default async function Home() {
           </h1>
           <div className="mb-2 flex flex-col">
             <p className="text-center text-xl font-medium text-accent-3">
-              I'm building a note taking web app and open sourcing everything.
+              I&apos;m building a note taking web app and open sourcing everything.
             </p>
             <p className="text-center text-xl font-medium text-accent-3">
               Follow along as we figure this out together.
