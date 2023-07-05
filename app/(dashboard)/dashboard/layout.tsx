@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import { getCurrentUser } from "@/lib/session";
 import { dashboardConfig } from "@/config/dashboard";

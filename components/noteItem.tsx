@@ -2,7 +2,6 @@ import { INote } from "@/types";
 import { Icons } from "./icons";
 import { formatDate } from "@/lib/utils";
 import MoreOperations from "./more-operations";
-import { Skeleton } from "@/components/ui/skeleton";
 
 interface NoteItemProps {
   note: INote;
@@ -34,13 +33,3 @@ export function NoteItem({ note }: NoteItemProps) {
     </div>
   );
 }
-NoteItem.Skeleton = function NoteItemSkeleton() {
-  return (
-    <div className="p-4">
-      <div className="space-y-3">
-        <Skeleton className="h-5 w-2/5" />
-        <Skeleton className="h-5 w-2/5" />
-      </div>
-    </div>
-  );
-};

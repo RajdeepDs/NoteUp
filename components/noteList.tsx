@@ -17,14 +17,7 @@ export default function NoteList() {
     }
   );
   if (loading) {
-    return (
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <NoteItem.Skeleton />
-        <NoteItem.Skeleton />
-        <NoteItem.Skeleton />
-        <NoteItem.Skeleton />
-      </div>
-    );
+    return <>Loading....</>;
   } else if (error) {
     return <p>Error: {error.message}</p>;
   } else {

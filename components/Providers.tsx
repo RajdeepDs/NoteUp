@@ -9,7 +9,7 @@ export const ApolloProviders = ({
   children: React.ReactNode;
 }) => {
   const client = new ApolloClient({
-    uri: "https://noteup-wheat.vercel.app/api/graphql",
+    uri: `https://noteup-wheat.vercel.app/api/graphql`,
     cache: new InMemoryCache(),
   });
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
