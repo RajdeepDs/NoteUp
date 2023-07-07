@@ -29,7 +29,7 @@ export default async function DashboardLayout({
         <div className="container flex h-16 items-center py-4">
           <div className="border-border mr-20 hidden items-center space-x-4 rounded-md border p-2 md:flex">
             <div className="h-5 w-5 rounded-sm bg-purple-400" />
-            <h1 className="text-lg">Rajdeep Das</h1>
+            <h1 className="text-lg">{user.name}</h1>
           </div>
           <div className="ml-auto flex">
             <UserNav
