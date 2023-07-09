@@ -1,6 +1,5 @@
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { User } from "next-auth";
-import { Button } from "./ui/button";
 import { Icons } from "./icons";
 
 interface UserAvatarProp extends React.HTMLAttributes<HTMLDivElement> {

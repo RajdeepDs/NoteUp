@@ -1,5 +1,3 @@
-import { getCurrentUser } from "@/lib/session";
-import { redirect } from "next/navigation";
 
 interface EditorProps {
   children?: React.ReactNode;
