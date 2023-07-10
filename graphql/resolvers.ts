@@ -70,6 +70,13 @@ export const resolvers = {
         },
       });
     },
+    user: async (parent: any, args: any, context: Context) => {
+      return await context.db.user.findUnique({
+        where: {
+          id: args.id,
+        },
+      });
+    },
   },
   Mutation: {
     createNote: async (parent: any, args: any, context: Context) => {
@@ -148,6 +155,17 @@ export const resolvers = {
       return await context.db.tag.delete({
         where: {
           id: args.id,
+        },
+      });
+    },
+    updateUser: async (parent: any, args: any, context: Context) => {
+      return await context.db.user.update({
+        where: {
+          id: args.id,
+        },
+        data: {
+          name: args.name,
+          email: args.email,
         },
       });
     },

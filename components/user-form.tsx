@@ -13,10 +13,13 @@ import { Button } from "./ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { User } from "next-auth";
+import { useMutation, useQuery } from "@apollo/client";
+import { GET_USER } from "@/graphql/queries";
+import { IUser } from "@/types";
+import { UPDATE_USER } from "@/graphql/mutations";
 
 interface UserNameFormProps extends React.HTMLAttributes<HTMLFormElement> {
-  user: Pick<User, "name" | "email">;
+  user: Pick<IUser, "id">;
 }
 
 const formSchema = z.object({
@@ -25,17 +28,41 @@ const formSchema = z.object({
 });
 
 export default function UserForm({ user }: UserNameFormProps) {
+  const {data, error} = useQuery(GET_USER, {
+    variables: {
+      id: user?.id,
+    }
+  });
+  if(error) console.log(error);
+
+  const userData = data?.user;
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: user?.name || "",
-      email: user?.email || "",
+      username: userData?.name || "",
+      email: userData?.email || "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const [updateUser] = useMutation(UPDATE_USER);
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    try {
+      const { data } = await updateUser({
+        variables: {
+          id: userData?.id,
+          name: values.username,
+          email: values.email,
+        },
+      });
+      console.log(data);
+    } catch (error) {
+      console.error("Error updating user :", error);
+    }
   }
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

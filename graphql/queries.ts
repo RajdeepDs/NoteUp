@@ -68,3 +68,12 @@ export const GET_TAGSBYNOTEID = gql`
     }
   }
 `;
+export const GET_USER = gql`
+  query User($id: ID!) {
+    user(id: $id) {
+      id
+      name
+      email
+  }
+}
+`;

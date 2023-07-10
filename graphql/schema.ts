@@ -30,6 +30,7 @@ export const typeDefs = `#graphql
         tags: [Tag]
         notesByTag(tagId: ID!): [Note]
         tagsByNoteId(noteId: ID!): [Tag]
+        user(id: ID!): User
     }
 
     type Mutation{
@@ -38,5 +39,6 @@ export const typeDefs = `#graphql
         deleteNote(id: ID!): Note
         createTag(name: String!, id: ID!): Tag!
         deleteTag(id: ID!): Tag
+        updateUser(id: ID!, name: String!, email: String!): User
     }
 `;

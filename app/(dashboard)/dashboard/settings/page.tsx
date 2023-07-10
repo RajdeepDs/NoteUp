@@ -7,14 +7,14 @@ export default async function SettingsPage() {
 
   return (
     <div>
-      <div className="border-b mt-2">
+      <div className="mt-2 border-b">
         <DashboardHeader
           title="Profile"
           description="Manage your profile settings"
         />
       </div>
       <div className="mt-4">
-        <UserForm user={{ name: user?.name, email: user?.email || "" }}/>
+        <UserForm user={{ id: user?.id || " " }} />
       </div>
     </div>
   );

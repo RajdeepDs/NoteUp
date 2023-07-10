@@ -22,7 +22,7 @@ export type DashboardConfig = {
   sidebarNav: SidebarNavItem[];
 };
 
-import { Note, Tag } from "@prisma/client";
+import { Note, Tag, User } from "@prisma/client";
 interface INote extends Note {
   notes: Note[];
   tags?: Tag[];
@@ -30,4 +30,7 @@ interface INote extends Note {
 
 interface ITag extends Tag {
   tags: Tag[];
+}
+interface IUser extends User {
+  user: User;
 }
