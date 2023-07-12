@@ -23,11 +23,20 @@ export default function NoteList() {
   } else {
     const notes = data?.notesByTag || data?.notes;
     return (
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {notes?.map((note: INote) => (
-          <NoteItem key={note.id} note={note} />
-        ))}
-      </div>
+      <>
+        {notes?.length ? (
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {notes?.map((note: INote) => (
+              <NoteItem key={note.id} note={note} />
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center mt-32 space-y-4">
+            <h1 className="noteup">No Notes created</h1>
+            <p className="text-accent-2 font-medium text-xl">You don&apos;t have any notes created. Start creating notes</p>
+          </div>
+        )}
+      </>
     );
   }
 }
