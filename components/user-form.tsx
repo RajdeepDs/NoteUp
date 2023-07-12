@@ -77,7 +77,7 @@ export default function UserForm({ user }: UserNameFormProps) {
                   id="username"
                   placeholder="example"
                   {...field}
-                  className="ml-2 max-w-[320px] text-accent-3"
+                  className="ml-2 max-w-[320px] text-black"
                 />
               </FormControl>
               <FormDescription className="ml-2 text-accent-3 ">
@@ -97,7 +97,7 @@ export default function UserForm({ user }: UserNameFormProps) {
                 <Input
                   placeholder="example@gmail.com"
                   {...field}
-                  className="ml-2 max-w-[320px] text-accent-3"
+                  className="ml-2 max-w-[320px] text-black"
                 />
               </FormControl>
               <FormDescription className="ml-2 text-accent-3 ">
