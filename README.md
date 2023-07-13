@@ -41,7 +41,7 @@ npm run dev
 
 ## License
 
-Licensed under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
+Licensed under the [MIT license](https://github.com/RajdeepDs/NoteUp/blob/main/LICENSE.md).
 #
 
 > Inspired by [Taxonomy](https://github.com/shadcn/taxonomy).
