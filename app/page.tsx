@@ -29,7 +29,7 @@ export default async function Home() {
         </div>
       </nav>
       <div className="mt-10">
-        <div className="flex flex-col items-center justify-center space-y-4 md:p-24">
+        <div className="flex flex-col items-center justify-center space-y-8 md:p-24 md:my-24">
           <h1 className="noteup font-mono text-2xl font-bold md:text-[4rem]">
             Note taking web app.
           </h1>
@@ -54,7 +54,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col-reverse md:grid md:grid-cols-2 mt-10">
+      <div className="flex flex-col-reverse md:grid md:grid-cols-2 mt-10 md:my-24">
         <div className="flex justify-items-center">
           <div className="flex flex-col justify-center">
             <h1 className="noteup text-center text-2xl md:text-5xl md:text-start">Edit your Notes.</h1>
