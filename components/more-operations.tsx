@@ -83,7 +83,7 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={onClick}
-              className="bg-secondary focus:ring-secondary"
+              className="bg-secondary focus:ring-secondary hover:bg-secondary-soft hover:text-secondary"
             >
               {isDeleteLoading ? (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
