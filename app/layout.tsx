@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Provider from "@/components/Provider";
 import { ApolloProviders } from "@/components/Providers";
+import { Analytics } from '@vercel/analytics/react';
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <ApolloProviders>
           <Provider>{children}</Provider>
         </ApolloProviders>
+        <Analytics />
       </body>
     </html>
   );
