@@ -14,6 +14,7 @@ import {
   UserCog,
   MoreHorizontal,
   CalendarDays,
+  Code,
   type Icon as LucideIcon,
   LucideProps,
 } from "lucide-react";
@@ -36,6 +37,7 @@ export const Icons = {
   appearance: Settings,
   more: MoreHorizontal,
   calender: CalendarDays,
+  code: Code,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

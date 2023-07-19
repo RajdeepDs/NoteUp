@@ -4,6 +4,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import EditorPage from "../public/EditorPage.png";
 import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 export default async function Home() {
   return (
@@ -14,10 +15,10 @@ export default async function Home() {
           <span className="noteup text-2xl leading-none">NoteUp</span>
         </div>
         <div className="flex items-center space-x-4">
-          <Link href="/" className="text-accent-3 hover:text-black hidden md:flex">
+          <Link href="#about" className="text-accent-3 hover:text-black hidden md:flex">
             About
           </Link>
-          <Link href="/" className="text-accent-3 hover:text-black hidden md:flex">
+          <Link href="#feature" className="text-accent-3 hover:text-black hidden md:flex">
             Feature
           </Link>
           <Link
@@ -28,7 +29,7 @@ export default async function Home() {
           </Link>
         </div>
       </nav>
-      <div className="mt-10">
+      <div className="mt-10" id="about">
         <div className="flex flex-col items-center justify-center space-y-8 md:p-24 md:my-24">
           <h1 className="noteup font-mono text-2xl font-bold md:text-[4rem]">
             Note taking web app.
@@ -54,7 +55,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col-reverse md:grid md:grid-cols-2 mt-10 md:my-24">
+      <div  className="flex flex-col-reverse md:grid md:grid-cols-2 mt-10 md:my-24">
         <div className="flex justify-items-center">
           <div className="flex flex-col justify-center">
             <h1 className="noteup text-center text-2xl md:text-5xl md:text-start">Edit your Notes.</h1>
@@ -72,7 +73,7 @@ export default async function Home() {
           />
         </div>
       </div>
-      <div className="mt-12">
+      <div className="mt-12" id="feature">
         <div className="flex flex-col items-center justify-center space-y-3 md:p-24">
           <h1 className="noteup text-center text-2xl md:text-5xl">
             Proudly Open Source
@@ -95,7 +96,8 @@ export default async function Home() {
       </div>
       <footer className="mt-10">
         <div className="flex flex-col justify-between md:flex-row">
-          <p className="text-center text-sm md:text-base">
+          <p className="text-center text-sm md:text-base flex text-accent-3 items-center">
+            <Icons.code className="w-4 h-4 mr-1"/>
             Build by Rajdeep. The Source code is available on Github.
           </p>
           <div className="flex justify-center space-x-4">
