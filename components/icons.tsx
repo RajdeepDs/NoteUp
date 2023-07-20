@@ -15,6 +15,7 @@ import {
   MoreHorizontal,
   CalendarDays,
   Code,
+  Github,
   type Icon as LucideIcon,
   LucideProps,
 } from "lucide-react";
@@ -38,6 +39,7 @@ export const Icons = {
   more: MoreHorizontal,
   calender: CalendarDays,
   code: Code,
+  githubIcon: Github,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

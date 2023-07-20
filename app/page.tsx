@@ -90,6 +90,7 @@ export default async function Home() {
             href="https://github.com/RajdeepDs/NoteUp"
             className={cn(buttonVariants({ variant: "ghost" }))}
           >
+            <Icons.githubIcon className="w-4 h-4 mr-2"/>
             Github
           </Link>
         </div>
