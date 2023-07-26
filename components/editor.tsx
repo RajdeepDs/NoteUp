@@ -11,12 +11,12 @@ import EditorJS from "@editorjs/editorjs";
 import { useMutation } from "@apollo/client";
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "./ui/button";
+import Tags from "./tags";
 import { Icons } from "./icons";
 import { INote } from "@/types";
+import { buttonVariants } from "./ui/button";
 import { notePatchSchema } from "@/lib/validations/note";
 import { UPDATE_NOTE } from "@/graphql/mutations";
-import Tags from "./tags";
 
 type EditorProps = {
   note: INote;
@@ -43,7 +43,7 @@ export function Editor({ note }: EditorProps) {
     const InlineCode = (await import("@editorjs/inline-code")).default;
 
     const body = note ? notePatchSchema.parse(note) : null;
-    
+
     if (!ref.current) {
       const editor = new EditorJS({
         holder: "editor",
@@ -133,12 +133,13 @@ export function Editor({ note }: EditorProps) {
             className="bg-background w-full resize-none appearance-none overflow-hidden text-5xl font-bold focus:outline-none"
             {...register("title", { required: true })}
           />
-          <div className="mt-2 flex flex-col p-2 border-b">
-            <Tags/>
+          <div className="mt-2 flex flex-col border-b p-2">
+            <Tags />
           </div>
           <div id="editor" className="min-h-[500px]" />
           <p className="bottom-9 text-sm text-gray-500">
-            Use <kbd className="bg-slate-200 p-1 rounded">Tab</kbd> to open the command menu.
+            Use <kbd className="rounded bg-slate-200 p-1">Tab</kbd> to open the
+            command menu.
           </p>
         </div>
       </div>

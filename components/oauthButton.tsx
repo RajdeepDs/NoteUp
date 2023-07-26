@@ -16,9 +16,7 @@ export default function OauthButton() {
           <span className="w-full border-t border-accent-1" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-accent-2">
-            Or continue with
-          </span>
+          <span className="bg-white px-2 text-accent-2">Or continue with</span>
         </div>
       </div>
       <div className="flex flex-col space-y-2">
@@ -27,7 +25,9 @@ export default function OauthButton() {
           className={cn(buttonVariants({ variant: "oauth" }))}
           onClick={() => {
             setIsGitHubLoading(true);
-            signIn("github", {callbackUrl: `${window.location.origin}/dashboard`});
+            signIn("github", {
+              callbackUrl: `${window.location.origin}/dashboard`,
+            });
           }}
           disabled={isGoogleLoading || isGitHubLoading}
         >
@@ -43,7 +43,9 @@ export default function OauthButton() {
           className={cn(buttonVariants({ variant: "oauth" }))}
           onClick={() => {
             setIsGoogleLoading(true);
-            signIn("google", {callbackUrl: `${window.location.origin}/dashboard`});
+            signIn("google", {
+              callbackUrl: `${window.location.origin}/dashboard`,
+            });
           }}
           disabled={isGoogleLoading || isGitHubLoading}
         >

@@ -1,4 +1,3 @@
-
 interface EditorProps {
   children?: React.ReactNode;
 }

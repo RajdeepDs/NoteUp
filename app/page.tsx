@@ -15,10 +15,16 @@ export default async function Home() {
           <span className="noteup text-2xl leading-none">NoteUp</span>
         </div>
         <div className="flex items-center space-x-4">
-          <Link href="#about" className="text-accent-3 hover:text-black hidden md:flex">
+          <Link
+            href="#about"
+            className="hidden text-accent-3 hover:text-black md:flex"
+          >
             About
           </Link>
-          <Link href="#feature" className="text-accent-3 hover:text-black hidden md:flex">
+          <Link
+            href="#feature"
+            className="hidden text-accent-3 hover:text-black md:flex"
+          >
             Feature
           </Link>
           <Link
@@ -30,13 +36,14 @@ export default async function Home() {
         </div>
       </nav>
       <div className="mt-10" id="about">
-        <div className="flex flex-col items-center justify-center space-y-8 md:p-24 md:my-24">
+        <div className="flex flex-col items-center justify-center space-y-8 md:my-24 md:p-24">
           <h1 className="noteup font-mono text-2xl font-bold md:text-[4rem]">
             Note taking web app.
           </h1>
           <div className="mb-2 flex flex-col">
             <p className="text-center text-xl font-medium text-accent-3">
-              I&apos;m building a note taking web app and open sourcing everything.
+              I&apos;m building a note taking web app and open sourcing
+              everything.
             </p>
             <p className="text-center text-xl font-medium text-accent-3">
               Follow along as we figure this out together.
@@ -55,10 +62,12 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div  className="flex flex-col-reverse md:grid md:grid-cols-2 mt-10 md:my-24">
+      <div className="mt-10 flex flex-col-reverse md:my-24 md:grid md:grid-cols-2">
         <div className="flex justify-items-center">
           <div className="flex flex-col justify-center">
-            <h1 className="noteup text-center text-2xl md:text-5xl md:text-start">Edit your Notes.</h1>
+            <h1 className="noteup text-center text-2xl md:text-start md:text-5xl">
+              Edit your Notes.
+            </h1>
             <p className="text-center text-xl font-medium text-accent-3">
               We have text editor so you can edit your notes.
             </p>
@@ -90,15 +99,15 @@ export default async function Home() {
             href="https://github.com/RajdeepDs/NoteUp"
             className={cn(buttonVariants({ variant: "ghost" }))}
           >
-            <Icons.githubIcon className="w-4 h-4 mr-2"/>
+            <Icons.githubIcon className="mr-2 h-4 w-4" />
             Github
           </Link>
         </div>
       </div>
       <footer className="mt-10">
         <div className="flex flex-col justify-between md:flex-row">
-          <p className="text-center text-sm md:text-base flex text-accent-3 items-center">
-            <Icons.code className="w-4 h-4 mr-1"/>
+          <p className="flex items-center text-center text-sm text-accent-3 md:text-base">
+            <Icons.code className="mr-1 h-4 w-4" />
             Build by Rajdeep. The Source code is available on Github.
           </p>
           <div className="flex justify-center space-x-4">

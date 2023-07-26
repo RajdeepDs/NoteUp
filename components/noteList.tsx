@@ -31,9 +31,11 @@ export default function NoteList() {
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center mt-32 space-y-4">
+          <div className="mt-32 flex flex-col items-center justify-center space-y-4">
             <h1 className="noteup">No Notes created</h1>
-            <p className="text-accent-2 font-medium text-xl">You don&apos;t have any notes created. Start creating notes</p>
+            <p className="text-xl font-medium text-accent-2">
+              You don&apos;t have any notes created. Start creating notes
+            </p>
           </div>
         )}
       </>

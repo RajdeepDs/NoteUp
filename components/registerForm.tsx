@@ -30,7 +30,7 @@ export default function RegisterForm({
   } = useForm<FormData>({ resolver: zodResolver(userAuthSchema) });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const router = useRouter();
-  
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
@@ -66,7 +66,7 @@ export default function RegisterForm({
                 {...register("name", { required: "This is required" })}
               />
               {errors?.name && (
-                <p className="px-1 text-xs text-destructive">
+                <p className="text-destructive px-1 text-xs">
                   {errors.name.message}
                 </p>
               )}
@@ -84,7 +84,7 @@ export default function RegisterForm({
                 {...register("email", { required: "This is required" })}
               />
               {errors?.email && (
-                <p className="px-1 text-xs text-destructive">
+                <p className="text-destructive px-1 text-xs">
                   {errors.email.message}
                 </p>
               )}
@@ -99,7 +99,7 @@ export default function RegisterForm({
                 {...register("password", { required: "This is required" })}
               />
               {errors?.password && (
-                <p className="px-1 text-xs text-destructive">
+                <p className="text-destructive px-1 text-xs">
                   {errors.password.message}
                 </p>
               )}

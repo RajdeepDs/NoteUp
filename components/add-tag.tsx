@@ -3,7 +3,6 @@
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -59,7 +58,7 @@ export function AddTag({ noteId }: any) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="text-sm border px-2 rounded-md">+ Add Tag</button>
+        <button className="rounded-md border px-2 text-sm">+ Add Tag</button>
       </DialogTrigger>
       <Form {...form}>
         <DialogContent className="sm:max-w-[425px]">

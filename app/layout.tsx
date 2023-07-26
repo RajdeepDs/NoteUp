@@ -2,7 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Provider from "@/components/Provider";
 import { ApolloProviders } from "@/components/Providers";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
