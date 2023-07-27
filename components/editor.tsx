@@ -55,7 +55,7 @@ export function Editor({ note }: EditorProps) {
         data: body?.content,
         tools: {
           header: Header,
-          linkTool: LinkTool,
+          // linkTool: LinkTool,
           list: List,
           code: Code,
           inlineCode: InlineCode,
