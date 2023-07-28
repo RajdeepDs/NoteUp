@@ -8,11 +8,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import * as z from "zod";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_USER } from "@/graphql/queries";
 import { IUser } from "@/types";

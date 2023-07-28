@@ -1,10 +1,13 @@
 # NoteUp
+
 An open source application built using the new router, server components and everything new in Next.js 13.
 
 ## About this project
+
 This project is a Note taking web application, built with features like authentication, API routes, etc. would work in Next.js 13 and server components.
 
 ## Features
+
 - New `/app` directory,
 - Routing, Layouts, Nested Layouts and Layout Groups
 - Data Fetching, Caching and Mutation
@@ -18,6 +21,7 @@ This project is a Note taking web application, built with features like authenti
 - Styled using **Tailwind CSS**
 - Validations using **Zod**
 - Written in **TypeScript**
+- Text Editor used **EditorJS**
 
 ## Running Locally
 
