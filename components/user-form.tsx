@@ -17,6 +17,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { GET_USER } from "@/graphql/queries";
 import { IUser } from "@/types";
 import { UPDATE_USER } from "@/graphql/mutations";
+import { useToast } from "./ui/use-toast";
 
 interface UserNameFormProps extends React.HTMLAttributes<HTMLFormElement> {
   user: Pick<IUser, "id">;
@@ -28,12 +29,15 @@ const formSchema = z.object({
 });
 
 export default function UserForm({ user }: UserNameFormProps) {
-  const {data, error} = useQuery(GET_USER, {
+  const {toast} = useToast();
+  const { data, loading, error } = useQuery(GET_USER, {
     variables: {
       id: user?.id,
-    }
+    },
   });
-  if(error) console.log(error);
+  if (loading) console.log("Loading...");
+  
+  if (error) console.log(error);
 
   const userData = data?.user;
 
@@ -57,6 +61,10 @@ export default function UserForm({ user }: UserNameFormProps) {
           email: values.email,
         },
       });
+      toast({
+        title: "User updated",
+        description: "Your user profile has been updated.",
+      })
       console.log(data);
     } catch (error) {
       console.error("Error updating user :", error);

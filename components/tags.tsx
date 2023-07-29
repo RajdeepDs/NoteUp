@@ -7,6 +7,7 @@ import { ITag } from "@/types";
 import { AddTag } from "./add-tag";
 import { GET_TAGSBYNOTEID } from "@/graphql/queries";
 import { DELETE_TAG } from "@/graphql/mutations";
+import { useToast } from "./ui/use-toast";
 
 export default function Tags() {
   const param = useParams();
@@ -45,6 +46,7 @@ export default function Tags() {
 }
 
 export function DeleteTag({ tagId, noteId }: any) {
+  const {toast} = useToast();
   const [deleteTag] = useMutation(DELETE_TAG);
   const handleDelete = async () => {
     await deleteTag({
@@ -53,6 +55,10 @@ export function DeleteTag({ tagId, noteId }: any) {
         { query: GET_TAGSBYNOTEID, variables: { noteId: noteId } },
       ],
     });
+    toast({
+      title: "Tag deleted",
+      description: "Your tag has been deleted.",
+    })
   };
   return (
     <span
