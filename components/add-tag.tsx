@@ -23,9 +23,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
 import { useMutation } from "@apollo/client";
 import { CREATE_TAG } from "@/graphql/mutations";
+import { useToast } from "./ui/use-toast";
 
 const formSchema = z.object({
   tagname: z.string().min(2, {
@@ -34,6 +36,8 @@ const formSchema = z.object({
 });
 
 export function AddTag({ noteId }: any) {
+  const router = useRouter();
+  const { toast } = useToast();
   const [createTag] = useMutation(CREATE_TAG);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,8 +54,15 @@ export function AddTag({ noteId }: any) {
           id: noteId,
         },
       });
-      console.log(data);
+      toast({
+        title: "Tag created",
+        description: "Your tag has been created.",
+      });
+      router.refresh();
     } catch (error) {
+      toast({
+        description: "There was an error creating your tag."
+      })
       console.error("Error creating tag:", error);
     }
   }

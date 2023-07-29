@@ -25,12 +25,14 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { useToast } from "./ui/use-toast";
 
 interface MoreOperationsProps {
   note: Pick<INote, "id" | "title">;
 }
 
 export default function MoreOperations({ note }: MoreOperationsProps) {
+  const { toast } = useToast();
   const [showDeleteAlert, setShowDeleteAlert] = React.useState<boolean>(false);
   const [isDeleteLoading, setIsDeleteLoading] = React.useState<boolean>(false);
   const [deleteNote] = useMutation(DELETE_NOTE, {
@@ -43,6 +45,10 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
     const deleted = await deleteNote({ variables: { id: note.id } });
     if (deleted) {
       setIsDeleteLoading(false);
+      toast({
+        title: "Note deleted",
+        description: "Your note has been deleted.",
+      });
     }
   }
   return (

@@ -19,7 +19,7 @@ export const CreateNoteButton = ({
   const router = useRouter();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [createNote] = useMutation(CREATE_NOTE);
-  const {toast} = useToast();
+  const { toast } = useToast();
   const handleCreateNote = async () => {
     setIsLoading(true);
     try {
@@ -30,14 +30,18 @@ export const CreateNoteButton = ({
       });
       setIsLoading(false);
       const noteId = data.createNote.id;
+      toast({
+        title: "Note created",
+        description:
+          "Your note has been created. You can start editing it now.",
+      });
       router.push(`/editor/${noteId}`);
     } catch (error) {
       setIsLoading(false);
       console.error("Error creating note:", error);
       toast({
-        title: "Error creating note",
-        // description: error.message,
-      })
+        description: "Error creating note",
+      });
     }
   };
 

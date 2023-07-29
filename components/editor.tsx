@@ -17,6 +17,7 @@ import { INote } from "@/types";
 import { buttonVariants } from "./ui/button";
 import { notePatchSchema } from "@/lib/validations/note";
 import { UPDATE_NOTE } from "@/graphql/mutations";
+import { useToast } from "./ui/use-toast";
 
 type EditorProps = {
   note: INote;
@@ -30,6 +31,7 @@ export function Editor({ note }: EditorProps) {
   });
   const ref = React.useRef<EditorJS>();
   const router = useRouter();
+  const { toast } = useToast();
   const [isSaving, setIsSaving] = React.useState<boolean>(false);
   const [isMounted, setIsMounted] = React.useState<boolean>(false);
   const initializeEditor = React.useCallback(async () => {
@@ -93,6 +95,10 @@ export function Editor({ note }: EditorProps) {
         },
       });
       setIsSaving(false);
+      toast({
+        title: "Note updated",
+        description: "Your note has been updated successfully.",
+      })
       router.refresh();
       console.log("Note updated: ", response.data.updateNote);
     } catch (error) {
