@@ -55,6 +55,12 @@ export default function UserNav({ user }: UserNavProp) {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
+          <DropdownMenuItem asChild>
+            <Link href={"/"} className="cursor-pointer">
+              Home Page
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
           <DropdownMenuItem
             className="cursor-pointer text-secondary focus:text-secondary focus:bg-secondary-soft"
             onSelect={(event) => {
