@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 import EditorPage from "../public/EditorPage.png";
 import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
+import Navigations from "@/components/navigations";
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className="container flex flex-col">
       <nav className="flex justify-between py-2">
@@ -14,26 +15,7 @@ export default async function Home() {
           <Image src="/logo.svg" alt="logo" width="35" height="35" />
           <span className="noteup text-2xl leading-none">NoteUp</span>
         </div>
-        <div className="flex items-center space-x-4">
-          <Link
-            href="#about"
-            className="hidden text-accent-3 hover:text-black md:flex"
-          >
-            About
-          </Link>
-          <Link
-            href="#feature"
-            className="hidden text-accent-3 hover:text-black md:flex"
-          >
-            Feature
-          </Link>
-          <Link
-            className={cn(buttonVariants({ variant: "ghost" }))}
-            href="/login"
-          >
-            Sign Up
-          </Link>
-        </div>
+        <Navigations />
       </nav>
       <div className="mt-10" id="about">
         <div className="flex flex-col items-center justify-center space-y-8 md:my-24 md:p-24">
