@@ -89,7 +89,6 @@ export default function Home() {
       <footer className="mt-10">
         <div className="flex flex-col justify-between md:flex-row">
           <p className="flex items-center text-center text-sm text-accent-3 md:text-base">
-            <Icons.code className="mr-1 h-4 w-4" />
             Build by Rajdeep. The Source code is available on Github.
           </p>
           <div className="flex justify-center space-x-4">

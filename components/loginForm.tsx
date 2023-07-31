@@ -67,7 +67,7 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
                 {...register("email")}
               />
               {errors?.email && (
-                <p className="text-destructive px-1 text-xs">
+                <p className="text-secondary px-1 text-xs">
                   {errors.email.message}
                 </p>
               )}
@@ -83,7 +83,7 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
                 {...register("password")}
               />
               {errors?.password && (
-                <p className="text-destructive px-1 text-xs">
+                <p className="text-secondary px-1 text-xs">
                   {errors.password.message}
                 </p>
               )}

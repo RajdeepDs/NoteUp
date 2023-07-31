@@ -66,7 +66,7 @@ export default function RegisterForm({
                 {...register("name", { required: "This is required" })}
               />
               {errors?.name && (
-                <p className="text-destructive px-1 text-xs">
+                <p className="text-secondary px-1 text-xs">
                   {errors.name.message}
                 </p>
               )}
@@ -84,7 +84,7 @@ export default function RegisterForm({
                 {...register("email", { required: "This is required" })}
               />
               {errors?.email && (
-                <p className="text-destructive px-1 text-xs">
+                <p className="text-secondary px-1 text-xs">
                   {errors.email.message}
                 </p>
               )}
@@ -99,7 +99,7 @@ export default function RegisterForm({
                 {...register("password", { required: "This is required" })}
               />
               {errors?.password && (
-                <p className="text-destructive px-1 text-xs">
+                <p className="text-secondary px-1 text-xs">
                   {errors.password.message}
                 </p>
               )}
