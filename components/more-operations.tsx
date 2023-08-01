@@ -46,6 +46,7 @@ export default function MoreOperations({ note }: MoreOperationsProps) {
     if (deleted) {
       setIsDeleteLoading(false);
       toast({
+        variant: "destructive",
         title: "Note deleted",
         description: "Your note has been deleted.",
       });
