@@ -44,11 +44,11 @@ export default function UserNav({ user }: UserNavProp) {
               All Notes
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem asChild>
+          {/* <DropdownMenuItem asChild>
             <Link href={"/dashboard/tasks"} className="cursor-pointer">
               Tasks
             </Link>
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
           <DropdownMenuItem asChild>
             <Link href={"/dashboard/settings"} className="cursor-pointer">
               Profile

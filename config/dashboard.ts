@@ -7,11 +7,11 @@ export const dashboardConfig: DashboardConfig = {
       href: "/dashboard",
       icon: "inbox",
     },
-    {
-      title: "Tasks",
-      href: "/dashboard/tasks",
-      icon: "list",
-    },
+    // {
+    //   title: "Tasks",
+    //   href: "/dashboard/tasks",
+    //   icon: "list",
+    // },
     {
       title: "Profile",
       href: "/dashboard/settings",
