@@ -2,6 +2,8 @@
 
 An open source application built using the new router, server components and everything new in Next.js 13.
 
+![Alt text](./public/NoteUp.png)
+
 ## About this project
 
 This project is a Note taking web application, built with features like authentication, API routes, etc. would work in Next.js 13 and server components.
