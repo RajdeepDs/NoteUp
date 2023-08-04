@@ -1,4 +1,4 @@
-# NoteUp
+# [NoteUp](https://noteup-wheat.vercel.app/)
 
 An open source application built using the new router, server components and everything new in Next.js 13.
 
