@@ -23,11 +23,11 @@ export default function Home() {
             Note taking web app.
           </h1>
           <div className="mb-2 flex flex-col">
-            <p className="text-center text-xl font-medium text-accent-3">
+            <p className="text-center text-lg md:text-xl font-medium text-accent-3">
               I&apos;m building a note taking web app and open sourcing
               everything.
             </p>
-            <p className="text-center text-xl font-medium text-accent-3">
+            <p className="text-center text-lg md:text-xl font-medium text-accent-3">
               Follow along as we figure this out together.
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function Home() {
             <h1 className="noteup text-center text-2xl md:text-start md:text-5xl">
               Edit your Notes.
             </h1>
-            <p className="text-center text-xl font-medium text-accent-3 md:text-start">
+            <p className="text-center text-lg font-medium text-accent-3 md:text-start md:text-xl">
               We have text editor so you can edit your notes.
             </p>
           </div>
@@ -70,10 +70,10 @@ export default function Home() {
             Proudly Open Source
           </h1>
           <div className="">
-            <p className="text-center text-xl font-medium text-accent-3">
+            <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
               NoteUp is open source and powered by open source software.
             </p>
-            <p className="text-center text-xl font-medium text-accent-3">
+            <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
               The code is available in Github.
             </p>
           </div>
