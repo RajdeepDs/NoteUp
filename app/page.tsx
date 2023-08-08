@@ -19,7 +19,7 @@ export default function Home() {
       </nav>
       <div className="mt-10" id="about">
         <div className="flex flex-col items-center justify-center space-y-8 md:my-24 md:p-24">
-          <h1 className="noteup font-mono text-2xl font-bold md:text-[4rem]">
+          <h1 className="noteup font-mono text-4xl font-bold md:text-[4rem]">
             Note taking web app.
           </h1>
           <div className="mb-2 flex flex-col">
@@ -50,7 +50,7 @@ export default function Home() {
             <h1 className="noteup text-center text-2xl md:text-start md:text-5xl">
               Edit your Notes.
             </h1>
-            <p className="text-center text-xl font-medium text-accent-3">
+            <p className="text-center text-xl font-medium text-accent-3 md:text-start">
               We have text editor so you can edit your notes.
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function Home() {
         </div>
       </div>
       <footer className="mt-10">
-        <div className="flex flex-col justify-between md:flex-row">
+        <div className="flex flex-col items-center justify-between md:flex-row">
           <p className="flex items-center text-center text-sm text-accent-3 md:text-base">
             Build by Rajdeep. The Source code is available on Github.
           </p>
