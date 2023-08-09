@@ -23,11 +23,11 @@ export default function Home() {
             Note taking web app.
           </h1>
           <div className="mb-2 flex flex-col">
-            <p className="text-center text-lg md:text-xl font-medium text-accent-3">
+            <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
               I&apos;m building a note taking web app and open sourcing
               everything.
             </p>
-            <p className="text-center text-lg md:text-xl font-medium text-accent-3">
+            <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
               Follow along as we figure this out together.
             </p>
           </div>
@@ -94,19 +94,19 @@ export default function Home() {
           <div className="flex justify-center space-x-4">
             <Link
               href="https://github.com/RajdeepDs"
-              className="text-accent-3 hover:text-black"
+              className="text-accent-3 hover:text-primary"
             >
               Github
             </Link>
             <Link
               href="https://www.instagram.com/rajdeep__ds/"
-              className="text-accent-3 hover:text-black"
+              className="text-accent-3 hover:text-primary"
             >
               Instagram
             </Link>
             <Link
               href="https://twitter.com/Rajdeep__ds"
-              className="text-accent-3 hover:text-black"
+              className="text-accent-3 hover:text-primary"
             >
               Twitter
             </Link>

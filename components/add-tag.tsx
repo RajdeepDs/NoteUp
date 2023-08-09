@@ -61,15 +61,17 @@ export function AddTag({ noteId }: any) {
       router.refresh();
     } catch (error) {
       toast({
-        description: "There was an error creating your tag."
-      })
+        description: "There was an error creating your tag.",
+      });
       console.error("Error creating tag:", error);
     }
   }
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="rounded-md border px-2 text-sm">+ Add Tag</button>
+        <button className="rounded-md border border-primary px-2 text-sm text-primary">
+          + Add Tag
+        </button>
       </DialogTrigger>
       <Form {...form}>
         <DialogContent className="sm:max-w-[425px]">

@@ -8,6 +8,7 @@ import { AddTag } from "./add-tag";
 import { GET_TAGSBYNOTEID } from "@/graphql/queries";
 import { DELETE_TAG } from "@/graphql/mutations";
 import { useToast } from "./ui/use-toast";
+import { Icons } from "./icons";
 
 export default function Tags() {
   const param = useParams();
@@ -33,7 +34,7 @@ export default function Tags() {
         {tags?.map((tag: ITag) => (
           <li
             key={tag.id}
-            className="items-center rounded bg-accent-1 px-2 text-accent-3"
+            className="flex cursor-default items-center rounded bg-primary-soft px-2 text-primary"
           >
             {tag.name}
             <DeleteTag tagId={tag.id} noteId={noteId} />
@@ -46,7 +47,7 @@ export default function Tags() {
 }
 
 export function DeleteTag({ tagId, noteId }: any) {
-  const {toast} = useToast();
+  const { toast } = useToast();
   const [deleteTag] = useMutation(DELETE_TAG);
   const handleDelete = async () => {
     await deleteTag({
@@ -58,14 +59,12 @@ export function DeleteTag({ tagId, noteId }: any) {
     toast({
       title: "Tag deleted",
       description: "Your tag has been deleted.",
-    })
+    });
   };
   return (
-    <span
-      className="ml-1 cursor-pointer hover:text-black"
+    <Icons.close
+      className="ml-1 h-3 w-3 cursor-pointer"
       onClick={handleDelete}
-    >
-      x
-    </span>
+    />
   );
 }

@@ -14,13 +14,13 @@ export default function Navigations() {
       <div className="flex items-center space-x-4">
         <Link
           href="#about"
-          className="hidden text-accent-3 hover:text-black md:flex"
+          className="hidden text-accent-3 hover:text-primary md:flex"
         >
           About
         </Link>
         <Link
           href="#feature"
-          className="hidden text-accent-3 hover:text-black md:flex"
+          className="hidden text-accent-3 hover:text-primary md:flex"
         >
           Feature
         </Link>
