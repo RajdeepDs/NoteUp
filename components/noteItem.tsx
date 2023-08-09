@@ -21,7 +21,7 @@ export function NoteItem({ note }: NoteItemProps) {
         {note?.tags?.map((tag) => (
           <span
             key={tag.id}
-            className="inline-block rounded-full bg-accent-1 px-2 text-sm text-accent-3"
+            className="inline-block rounded-full bg-primary-soft px-2 text-sm text-primary"
           >
             {tag.name}
           </span>
