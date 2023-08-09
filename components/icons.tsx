@@ -16,6 +16,7 @@ import {
   CalendarDays,
   Code,
   Github,
+  X,
   type Icon as LucideIcon,
   LucideProps,
 } from "lucide-react";
@@ -40,6 +41,7 @@ export const Icons = {
   calender: CalendarDays,
   code: Code,
   githubIcon: Github,
+  close: X,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
