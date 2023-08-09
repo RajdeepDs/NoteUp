@@ -69,7 +69,7 @@ export function AddTag({ noteId }: any) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="rounded-md border px-2 text-sm">+ Add Tag</button>
+        <button className="rounded-md border border-primary px-2 text-sm text-primary">+ Add Tag</button>
       </DialogTrigger>
       <Form {...form}>
         <DialogContent className="sm:max-w-[425px]">

@@ -33,7 +33,7 @@ export default function Tags() {
         {tags?.map((tag: ITag) => (
           <li
             key={tag.id}
-            className="items-center rounded bg-accent-1 px-2 text-accent-3"
+            className="items-center rounded bg-primary-soft px-2 text-primary"
           >
             {tag.name}
             <DeleteTag tagId={tag.id} noteId={noteId} />
