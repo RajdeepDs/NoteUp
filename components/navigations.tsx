@@ -1,14 +1,13 @@
-"use client";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { useState } from "react";
 import { buttonVariants } from "./ui/button";
+import { getCurrentUser } from "@/lib/session";
 
-export default function Navigations() {
-  const [userExists, setUserExists] = useState<boolean>(true);
-  //   Need to add a useEffect to check if user exists
-
+export default async function Navigations() {
+  const userExists = await getCurrentUser();
+  console.log(userExists);
+  
   return (
     <>
       <div className="flex items-center space-x-4">
