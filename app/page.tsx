@@ -6,8 +6,11 @@ import EditorPage from "../public/EditorPage.png";
 import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import Navigations from "@/components/navigations";
+import { getCurrentUser } from "@/lib/session";
 
-export default function Home() {
+export default async function Home() {
+  const user = await getCurrentUser();
+
   return (
     <div className="container flex flex-col">
       <nav className="flex justify-between py-2">
@@ -15,7 +18,7 @@ export default function Home() {
           <Image src="/logo.svg" alt="logo" width="35" height="35" />
           <span className="noteup text-2xl leading-none">NoteUp</span>
         </div>
-        <Navigations />
+        <Navigations user={user} />
       </nav>
       <div className="mt-10" id="about">
         <div className="flex flex-col items-center justify-center space-y-8 md:my-24 md:p-24">
