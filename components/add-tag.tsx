@@ -96,7 +96,7 @@ export function AddTag({ noteId }: any) {
                         className="col-span-3 items-center py-2"
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-secondary"/>
                   </FormItem>
                 )}
               />
