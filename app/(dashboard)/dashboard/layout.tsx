@@ -27,7 +27,7 @@ export default async function DashboardLayout({
     <div className="flex min-h-screen flex-col space-y-6">
       <header className="border-border bg-background sticky top-0 z-40 border-b">
         <div className="container flex h-16 items-center py-4">
-          <div className="border-border mr-20 hidden items-center space-x-4 rounded-md border p-2 md:flex">
+          <div className="border-border mr-20 hidden items-center space-x-4 rounded-md border p-2 md:flex cursor-default">
             <div className="h-5 w-5 rounded-sm bg-purple-400" />
             <h1 className="text-lg">{user.name}</h1>
           </div>
