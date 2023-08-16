@@ -18,6 +18,7 @@ import { GET_USER } from "@/graphql/queries";
 import { IUser } from "@/types";
 import { UPDATE_USER } from "@/graphql/mutations";
 import { useToast } from "./ui/use-toast";
+import { useRouter } from "next/navigation";
 
 interface UserNameFormProps extends React.HTMLAttributes<HTMLFormElement> {
   user: Pick<IUser, "id">;
@@ -30,6 +31,7 @@ const formSchema = z.object({
 
 export default function UserForm({ user }: UserNameFormProps) {
   const {toast} = useToast();
+  const router = useRouter();
   const { data, loading, error } = useQuery(GET_USER, {
     variables: {
       id: user?.id,
@@ -66,6 +68,7 @@ export default function UserForm({ user }: UserNameFormProps) {
         description: "Your user profile has been updated.",
       })
       console.log(data);
+      router.refresh();
     } catch (error) {
       console.error("Error updating user :", error);
     }
