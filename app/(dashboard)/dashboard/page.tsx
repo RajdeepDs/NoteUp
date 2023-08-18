@@ -14,12 +14,14 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="">
-      <DashboardHeader
-        title="All Notes"
-        description="Create and manage notes."
-      />
-      <div className="flex w-full justify-end">
+    <div>
+      <div className="mt-2 border-b">
+        <DashboardHeader
+          title="All Notes"
+          description="Create and manage notes."
+        />
+      </div>
+      <div className="flex w-full justify-end mt-2">
         <CreateNoteButton />
       </div>
       <CategoryBar />
