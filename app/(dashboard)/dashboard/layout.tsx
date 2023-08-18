@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 import { getCurrentUser } from "@/lib/session";
 import { dashboardConfig } from "@/config/dashboard";
@@ -27,12 +28,21 @@ export default async function DashboardLayout({
   return (
     <div className="flex min-h-screen flex-col space-y-6">
       <header className="border-border bg-background sticky top-0 z-40 border-b">
-        <div className="container flex h-16 items-center py-4">
-          <Link href={"/dashboard/settings"} className="border-border mr-20 hidden items-center space-x-4 rounded-md border p-2 md:flex cursor-pointer">
+        <div className="container flex h-16 items-center py-4 justify-between">
+          <Link
+            href={"/dashboard/settings"}
+            className="border-border mr-20 hidden cursor-pointer items-center space-x-4 rounded-md border p-2 md:flex"
+          >
             <div className="h-5 w-5 rounded-sm bg-purple-400" />
             <h1 className="text-lg">{user.name}</h1>
-          </Link >
-          <div className="ml-auto flex">
+          </Link>
+          <Link href={"/"}>
+            <div className="flex items-center space-x-2">
+              <Image src="/logo.svg" alt="logo" width="35" height="35" />
+              <span className="noteup text-2xl leading-none">NoteUp</span>
+            </div>
+          </Link>
+          <div className=" flex">
             <UserNav
               user={{
                 name: user.name,
