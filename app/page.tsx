@@ -23,15 +23,15 @@ export default async function Home() {
       <div className="mt-10" id="about">
         <div className="flex flex-col items-center justify-center space-y-8 md:my-24 md:p-24">
           <h1 className="noteup font-mono text-4xl font-bold md:text-[4rem]">
-            Note taking web app.
+            Note taking web app
           </h1>
           <div className="mb-2 flex flex-col">
             <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
               I&apos;m building a note taking web app and open sourcing
-              everything.
+              everything
             </p>
             <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
-              Follow along as we figure this out together.
+              Follow along as we figure this out together
             </p>
           </div>
           <div className="flex space-x-4">
@@ -51,10 +51,10 @@ export default async function Home() {
         <div className="flex justify-items-center">
           <div className="flex flex-col justify-center">
             <h1 className="noteup text-center text-2xl md:text-start md:text-5xl">
-              Edit your Notes.
+              Edit your Notes
             </h1>
             <p className="text-center text-lg font-medium text-accent-3 md:text-start md:text-xl">
-              We have text editor so you can edit your notes.
+              We have text editor so you can edit your notes
             </p>
           </div>
         </div>
@@ -74,10 +74,10 @@ export default async function Home() {
           </h1>
           <div className="">
             <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
-              NoteUp is open source and powered by open source software.
+              NoteUp is open source and powered by open source software
             </p>
             <p className="text-center text-lg font-medium text-accent-3 md:text-xl">
-              The code is available in Github.
+              The code is available in Github
             </p>
           </div>
           <Link
